@@ -1,0 +1,34 @@
+h1{
+    background-color: yellow;
+    border: 2px solid #000;
+
+}
+
+@media(width : 400px){
+    h1{
+            background-color: red;
+    }
+}
+
+@media(min-width : 700px){
+    h1{
+       background-color : red ;
+   }
+}
+@media(max-width : 200px){
+    h1{
+       background-color : pink ;
+   }
+}
+
+@media(min-width : 200px) and (max-width : 300px){
+    h1{
+        background-color : green ;
+    }
+}
+
+@media( orientation : landscape) {
+    h1{
+        background-color : burlywood ;
+    }
+}

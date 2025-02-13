@@ -1,0 +1,16 @@
+div{
+    height: 200px;
+    width: 500px;
+    background-color: aquamarine;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 20px; /* all sides */
+    /* padding: 20px 15px;  top-bottom left-right */
+    /* padding: 20px 15px 10px;  top left-right bottom */
+    /* padding: 20px 10px 15px 25px;  clockwise */
+    margin: 20px; /* same as padding all tricks  */
+
+}

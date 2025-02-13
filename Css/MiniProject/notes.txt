@@ -1,0 +1,33 @@
+Color theory :-
+
+Color wheel :- 
+
+1) Primary colors: Red, Blue, Yellow
+2) Secondary colors: Orange, Green, Purple (made by mixing primary colors)
+3) Tertiary colors: Yellow-orange, Red-orange, Red-purple, Blue-purple, Blue-green, Yellow-green (made by mixing a primary and a secondary color)
+
+Color Combination :- 
+ 
+Subtal Color Combination - Monochromatic // color pelet
+Impactful Coloe Combination - Complementary
+High Contrast Combination - Triadic
+Neutral Color Combination - Analogous
+
+Color Combination website :- Canva Color wheel
+
+
+Typography :-
+
+- Style & Appearance of Text
+
+
+
+Google Font :-
+
+https://fonts.google.com
+
+
+Icons :-
+
+1 ) Google Icons
+2 ) Font Awesome / cdnjs font Awesome

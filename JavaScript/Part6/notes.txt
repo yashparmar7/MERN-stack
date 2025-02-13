@@ -1,0 +1,84 @@
+Function in JS :-
+-Function is block of code.
+-Function can be called multiple times.
+-Function can be passed as argument to another function.
+
+syntax :-
+    function funcName(parameters) {
+    //code to be executed
+    }
+
+calling :  funcName(parameters);
+
+
+Functions with argument :-
+-Function can take arguments.
+-Arguments are passed to function when it is called.
+-Arguments are used inside function to perform operations.
+
+ex :-
+
+function add(a,b) {
+    return a+b;
+    }
+
+    console.log(add(5,6)); //output 11
+
+
+Return Keyword : 
+-Return keyword is used to return value from function.
+-Return keyword can be used only once in a function.
+-Return keyword can be used with or without arguments.
+-Return keyword is used to terminate function execution.
+
+syntax :
+return value; //value can be any data type
+
+
+Scope : 
+- Scope determines the accessibility of variables,objects, and functions from different parts of the code.
+
+1) Function Scope 
+-Variables declared inside a function are not accessible outside the function.
+
+2) Block Scope 
+-Variables declared inside a block of code are not accessible outside the block.
+
+3) Lexical Scope
+-Variables declared in outer function are accessible in inner function.
+-Variables declared in inner function are not accessible in outer function.sx
+
+4) Global Scope
+-Variables declared outside any function are accessible from anywhere in the code.
+
+5) Local Scope
+-Variables declared inside a function are accessible only inside that function.
+
+
+
+Function Expressions :
+-Function expressions are used to declare functions.
+-Function expressions can be assigned to variables.
+-Function expressions can be passed as arguments to other functions.
+
+syntax :-
+const variable = function(arg1, arg2) {
+    //code to be executed
+    }
+
+
+
+Higher Order Functions :-
+- Higher order functions are functions that can take one or more functions as arguments or return functions as output.
+
+
+Higher Order Function (Return) :
+- A higher order function that returns a function is called a higher order function that returns a function.
+
+
+
+Methods :
+- Actions that can be performed on an object.
+- Methods are functions that belong to an object.
+
+

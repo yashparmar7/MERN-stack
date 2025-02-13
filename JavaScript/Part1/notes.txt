@@ -1,0 +1,109 @@
+Console Use REPL :- Read Evalute Print Loop
+
+
+What is Variable  ?
+- A Variable is simply the name of a storage location.
+- It is a container that holds a value.
+
+ex :-
+x = 5  # Here, 'x' is a variable that holds the value 5
+
+
+Datatypes :-
+
+primitive types :-
+
+( nn ss bb u ):- key
+
+1. Number 
+2. String
+3. Boolean
+4. Null
+5. Undefined
+6. Symbol
+7. BigInt
+
+Operations :-
+
+1. addition ( + )
+2. subtraction ( - )
+3. multiplication ( * )
+4. division ( / )
+5. modulus ( % )
+6. exponentiation ( ** ) // power operator
+7. equality ( == )
+8. inequality ( != )
+9. greater than ( > )
+10. less than ( < )
+
+NaN in Js :-
+NaN stands for Not a Number. It is a special value in JavaScript that represents an operation that cannot be performed on a number, such as dividing by zero.
+
+ex :- 
+console.log(1/0) // Output: NaN
+
+0 / 0
+NaN - 1
+NaN - 0
+
+Operator Precedence :- 
+-This is the general order of solving an expression.
+
+1. paranthesis ()
+2. Exponentiation ( ** )
+3. Multiplication ( * ) and Division ( / ) or modulus ( % )
+4. Addition ( + ) and Subtraction ( - )
+
+Variable Declaration :-
+
+1) let keyword :-
+let variableName = value;
+
+2) const keyword :- can't be changed
+const variableName = value;
+
+3) var keyword :- old syntax, same as let
+var variableName = value;
+
+Assignment Operators :-
+
+1. = (assignment)
+2. += (addition and assignment)
+3. -= (subtraction and assignment)
+4. *= (multiplication and assignment)
+5. /= (division and assignment)
+6. %= (modulus and assignment)
+7. **= (exponentiation and assignment)
+
+Unary Operators :-
+
+1. ++ (increment)
+2. -- (decrement)
+3. + (unary plus)
+4. - (unary minus)
+
+
+Strings in Js :-
+-String are text or sequence of characters
+
+ex :-
+
+let name = " tony stark ";
+
+String Indices :-
+- index start with 0
+
+
+Undefined :- 
+- A variable that has not been assigned a value is of type undefined.
+
+Null :-
+- The null value represent the intentional absence of any object value.
+- To be explicitly assign.
+
+
+
+
+
+
+

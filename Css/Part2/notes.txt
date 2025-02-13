@@ -1,0 +1,75 @@
+Selectors :-
+
+Universal Selectors ( * )
+
+Element Selectors ( h1 )
+
+ID Selectors ( # )
+
+Class Selectors ( . )
+
+Descendant Selectors ( div p ) :- Selects all paragraphs inside divs
+
+
+
+Adjacent Sibling Combinators :- 
+ - Heading3 that comes immediately after any paragraph
+
+ex :-
+
+ p + h3 {
+    prop : value ;
+ }
+
+ Child Combinators :- 
+ -Selects all buttons which are direct children of span
+
+ex :-
+ span > button {
+    prop : value;
+ }
+
+ Attribute Selectors ( = ) : - Slect elements based on the presence or value of a given Attribute
+
+ ex :- input[attr = "value" ]{
+    prop : value;
+ }
+
+
+Pseudo Class :-
+
+:hover
+:active
+:checked
+:nth-of-type
+
+
+Pseudo Element :-
+
+::first-letter
+::first-line
+::selection
+
+Casecading in CSS:-
+
+the CSS casecade algorithum job is to select CSS Declaration in order to determind the correct values for CSS Properties.
+
+
+Specificity :-
+
+Specificity is an algorithum that calculate the weight that is applied to a given CSS Declaration.
+
+ID  >  CLASS,ATTRIBUTE,PSEUDO CLASS  >  ELEMENTS,PSEUDO ELEMENTS
+
+More Selectors Choose > Less Selectors
+
+If Specificity are Same => Casecading
+
+
+
+!Important :-
+
+To show the most specific things in document
+
+
+Inheritance In CSS :- 

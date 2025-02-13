@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  color: #444;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button#quit-button {
+  background-color: #f44336;
+}
+
+button#quit-button:hover {
+  background-color: #e53935;
+}
+
+#hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Number Guessing Game</h1>
+    <p>Enter a maximum number to start the game:</p>
+    <input type="number" id="max-number" placeholder="Enter max number" />
+    <button id="start-game">Start Game</button>
+    <div id="game-section" class="hidden">
+      <p>Guess the number:</p>
+      <input type="number" id="guess-input" placeholder="Enter your guess" />
+      <button id="guess-button">Submit Guess</button>
+      <button id="quit-button">Quit</button>
+      <p id="hint"></p>
+    </div>
+  </div>
+  <script src="guessingGame.js"></script>
+</body>
+</html>

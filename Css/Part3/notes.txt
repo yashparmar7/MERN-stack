@@ -1,0 +1,32 @@
+Box Model In CSS :-
+
+1.Height
+2.Width
+3.Border :- width,style,color,top,bottom,left,right,radius
+4.Padding
+5.Margin
+
+Display Properties in CSS :- 
+
+Inline
+Block
+Inline-block
+
+
+Units In CSS :- 
+
+Absolute           Relative
+    px *               % *
+    pt                 em *
+    pc                 rem *
+    cm                 ch
+    mm                 vh
+    in                 vw
+
+  * % :- margin apply to inner parent div( outer ) / Relative to the parent element
+
+  * Em  :- size apply to there parent fontsize and padding,margin,width,height size apply to there relative / Relative to the font-size of the element (2em means 2 times the size of the current font)
+
+  * Rem (root em) :- use to avoid Em snow effect,  It represents the font size of the root element, / Relative to font-size of the root element
+
+

@@ -1,0 +1,62 @@
+JS Objects LIterals :-
+
+- Used to store keyed collection & complex entities.
+
+Differance :- Object are collection of properties.
+
+property => (key,value) pair
+
+
+Object of Object :-
+- Storing info of multiple students.
+
+const classInfo ={
+    aman : {
+        grade : "A+",
+        city : "Delhi"
+    }
+    om : {
+        grade : "A+",
+        city : "Delhi"
+    }
+    vikash : {
+        grade : "A+",
+        city : "Delhi"
+    }
+};
+
+
+Array of Objects :-
+- Storing info of multiple students
+
+const classInfo = [
+    {
+        name:"Yash",
+        age : 20
+    },
+    {
+        name:"Om",
+        age : 18
+    },
+    {
+        name:"Vikash",
+        age : 19
+    }
+];
+
+
+
+Math Objects :-
+
+Properties :
+
+1) Math.PI
+2) Math.E
+
+Methods :-
+
+1) Math.abs(n)
+2) Math.pow(a,b)
+3) Math.floor(n)
+4) Math.ceil(n)
+5) Math.random()

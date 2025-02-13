@@ -1,0 +1,82 @@
+consol.log() :-
+- To write a message on the console.
+
+Template Leterals :-
+-They are used to add embeded expression in a string.
+
+ex :- 
+let name = "yash";
+let age = 21;
+console.log(`My name is ${name} and I am ${age} years old`);
+
+
+Operators in JS :-
+- Arithmetic Operators :- ( + , - , * , / , % , **)
+- Assignment Operators :- ( = , += , -= , *= , /= , %= , **= )
+- Comparison Operators :- ( == , != , === , !== , > , < , >= , <= )
+- Logical Operators :- ( && , || , ! )
+- Bitwise Operators :- ( & , | , ^ , ~ , << , >> , >>> )
+- Conditional Operators :- ( ? : )
+- Unary Operators ( ++ , -- )
+
+
+logical Operator :-
+
+&& :-
+- It is used to check if both the conditions are true.
+
+true && true = true
+true && false = false
+false && true = false
+false && false = false
+
+|| :-
+- It is used to check if any of the conditions are true.
+
+true || true = true
+true || false = true
+false || true = true
+false || false = false
+
+Conditional Statements   :-
+- If Statement
+- If-else Statement :-
+- Nested If-else
+- Switch Statement :-
+- Ternary Operator :-
+
+Truthy & Falsy Value :-
+- Everything in JS is true or false (boolean value )
+- this doesn't mean their value itself is false or true, but they are treated as false or true if taken in boolean context.
+
+- Falsy values are :- ( null , undefined , 0 , -0 , NaN , "" , false, 0n(BigInt) )
+- Truthy values are :- ( everything else )
+
+
+Switch Statement :-
+
+-Used when we have some fixed values that we need to compare to.
+-It is used to check the value of a variable and execute a block of code based on that
+
+Syntax :-
+switch(expression) {
+    case value1:
+    // code to be executed if expression matches value1
+    break;
+    case value2:
+    // code to be executed if expression matches value2
+    break;
+    default:
+    // code to be executed if expression doesn't match any of the values
+    }
+
+Alert :- 
+- Alert display an alert message on the page.
+
+alert("something else!");
+
+Prompt :-
+-It's display a dialog box that asks user for some input.
+
+prompt("Please enter your no :");
+

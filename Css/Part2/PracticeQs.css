@@ -1,0 +1,68 @@
+*{
+    font-family: 'Courier New';
+}
+
+/* h1{
+    color: #1b74e4;
+} */
+
+#searchbtn{
+    background-color: black;
+    color: white;
+}
+.userbtn{
+    background-color: aqua;
+}
+
+
+/* practice 2 */
+
+/* #myid p{
+    color: green;
+} */
+
+div[id="myid"] p{
+ color: green;
+}
+
+/* Practice 3 */
+
+h1{
+    color: pink;
+}
+
+#greet{
+    color: yellow;
+}
+
+.myclass{
+    color: brown;
+}
+
+/* Practice 4 */
+
+div p{
+    background-color: black;
+}
+
+.para{
+    background-color: blue;
+}
+
+p{
+    background-color: green;
+}
+
+/* Practice 5 */
+
+div.greetDiv .greet{
+    color: green;
+}
+
+.greetDiv p.greet{
+    color: blue;
+}
+
+.greetDiv .greet{
+    color: red;
+}

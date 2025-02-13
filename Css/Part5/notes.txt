@@ -1,0 +1,110 @@
+Flex Box :-
+- Flexible Box Layout
+
+-It is a one-dimensional layout method  for arranging items in row or column.
+
+Flexbox Direction :-
+
+-It set how flex items ae placed in the flex container, along which axis and direction.
+
+1) flex-direction : row ;  // main axis,left to right
+2) flex-direction : row-reverse ;  // main axis,right to left
+3) flex-direction : column ;  // main axis,top to bottom
+4) flex-direction : column-reverse ;  // main axis,bottom to top
+
+
+Justify Content :-
+
+-  Tells how the browser distribute space between and around content items along the main-axis.
+
+1) justify-content : flex-start;
+2) justify-content : flex-end;
+3) justify-content : center;
+4) justify-content : space-between;
+5) justify-content : space-around;
+6) justify-content : space-evenly;
+
+
+Flex wrap :- 
+
+- Sets whether flex items are forced onto one liner or can wrap onto multiple lines.
+
+1) flex-wrap : nowrap;
+2) flex-wrap : wrap;
+3) flex-wrap : wrap-reverse;
+
+
+Align items :- 
+
+- Distributes our items along the cross axis.
+
+1) align-items : flex-start;
+2) align-items : flex-end;
+3) align-items : center;
+4) align-items : baseline;
+5) align-items : stretch;
+
+
+Align Content :-
+
+- it sets the distribution of space between and around content items along a flexbox's cross-axis.
+-same work as justify content but justify content wrok with main axis and align content work with cross axis.
+
+1) align-content : flex-start;
+2) align-content : flex-end;
+3) align-content : center;
+4) align-content : space-between;
+5) align-content : space-around;
+6) align-content : space-evenly;
+7) align-content : stretch;
+8) align-content : baseline;
+
+
+Align Self :- 
+
+- Align an item along the cross axis.
+- It is used to align an item individually.
+- It is used to override the align-items property.
+
+1) align-self: flex-start;
+2) align-self: flex-end;
+3) align-self: center;
+4) align-self: baseline;
+5) align-self: stretch;
+6) align-self: auto;
+ 
+
+Flex Sizing :-
+- It is used to set the size of the flex items.
+-It set the initial main size of a flex item.
+
+flex-basis : 100px;
+
+flex-grow :-
+
+-It specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+
+flex-grow : 1;
+
+
+flex-shrink :-
+
+- It set the flex shrink factor of a flex item.
+
+flex-shrink : 1;
+
+
+* Flex Shorthands :-
+
+1) flex-grow | flex-shrink | flex-basis 
+   flex: 1 1 100px;
+   
+2) flex-grow | flex-basis
+   flex: 1 100px;
+   
+3) flex-shrink | flex-basis
+   flex: 1 100px;
+   
+4) flex-grow | flex-shrink
+   flex: 1 1;
+

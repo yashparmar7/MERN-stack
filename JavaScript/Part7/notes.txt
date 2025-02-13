@@ -1,0 +1,56 @@
+this keywords :-
+- "This" keyword refer to an object that is executing the current piece of code.
+
+
+try & catch :
+- try block is used to execute a block of code that may potentially throw an exception.
+- The try atatement allows you to define block of code to be tested for errors while it is being executed.
+
+- catch block is used to handle the exception that is thrown by the try block.
+-The catch statement allow you to define a block of code to be executed, if an error occurs in the try block.
+
+
+syntax :
+try {
+    // code that may throw an exception
+    } catch (Exception e) {
+        // code to handle the exception
+    }
+
+
+Miscellaneous Topics :
+
+Arrow Functions :
+- Arrow functions are a concise way to write small anonymous functions.
+
+Syntax :
+const func = (arg1, arg2..) => {
+    function definition
+}
+
+*Implicit return
+- If the function has only one expression, you can omit the return keyword.
+- The expression is implicitly returned.
+
+
+setTimeout(function,timeout) :
+- The setTimeout() function sets a timer to run a function after a specified delay.
+- The function is executed after the specified delay, and the timer is cleared.
+-timeout are meliseconds.
+
+
+setInterval(function,timer) :
+- The setInterval() function sets a timer to run a function at specified intervals.
+- The function is executed at the specified interval, and the timer is cleared.
+-timeout are meliseconds.
+
+clearInterval(id) :
+- The clearInterval() function clears a timer set with setInterval().
+- The id is the id of the timer to be cleared.
+
+
+
+this with Arrow Functions :
+- The this keyword in arrow functions behaves differently than in regular functions.
+- In arrow functions, the this keyword refers to the this of the surrounding scope.
+- In regular functions, the this keyword refers to the global object or the object that the function is called on.

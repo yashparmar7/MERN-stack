@@ -1,0 +1,117 @@
+Note :- 
+- In JS String are Immuteble.
+-Immuteable means original string not change their value.
+
+
+
+String Methods :-
+
+Methos - actions that can be perform on objects.
+
+1) str.trim() :-
+- Trims whitespaces from both ends of string & return a new one.
+
+2) str.toUpperCase() :-
+
+3) str.toLowerCase() :-
+
+4) str.indexOf() :- 
+- Return the first indexof occurence of some value in string. or gives -1 if not found.
+
+5) str.slice(arg1(start index),arg2(end index)) :-
+- Return a part of the original string as a new string.
+
+note :- str.slice(-num) = str.slice(lenght-num)
+        - substring method is same as slice.
+
+6) str.replace("currunt value", " replace value")
+- Search a value in the string & return a new string with the value replaced.
+
+7) str.repeat(count) :-
+
+
+String Method with Arguments :-
+- Argumentsis some value that we pass to the methods.
+
+syntax :-
+
+str.method(args)
+
+Method Chaining :-
+-Using one method after another. Order of execution will be left to right.
+
+ex :-
+
+str.toUpperCase().trim()
+
+
+
+Array :-
+- Linear collection of things.
+- Array index start with 0.
+- Array we have create mix arrays. or empty array.
+- Array is Mutable. We can change array value.
+
+Array methods :-
+
+1) array.push(value)
+- add to end. 
+
+2) array.pop(value)
+- delete from end & return it.
+
+3) array.unshift(value)
+- add to start.
+
+4) array.shift(value)
+- delete from start & return it.
+
+
+5) array.indexOf(value)
+- return index of something
+
+6) array.include(value)
+- search for a value, if value have been search than return true either false.
+
+7) array.concate(secondary) // not change original array
+- mearge 2 array
+
+8) array.reverse() // it can change original array
+- reverse an array
+
+9) array.slice(start, end) // not change in original array
+- copies a portion of an array
+
+8) array.splice( start, deletCount, intem0...itemN) //change in original array
+- remove / replace / add element in place
+
+9) array.sort()
+- sort an array, assending order or desending order
+
+
+Nested Array :-
+- array of array
+- multidimensional array
+
+synax :-
+
+let array = [
+    [2,3]
+    [5,3]
+    [2,5]
+]
+
+Array References:-
+
+- References means Address of Memory
+
+
+
+Constant Array :-
+- In Constant array we have perform some operation but not change or make new array.
+
+syntax :- 
+
+const arr = [1,2,3,4]
+
+

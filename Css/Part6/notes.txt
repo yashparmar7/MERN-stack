@@ -1,0 +1,156 @@
+Grid :- 
+
+- Setting container's display to grid will make all children grid item.
+
+    display : grid ;
+
+Grid Model :-
+
+Grid line
+Grid Cell
+Grid Track 
+
+Grid Template :-
+ -They define the line & track sizing.
+
+    grid-template-rows : 10px 10px;
+    grid-template-columns : 10px 10px;
+
+ repeat :- Repeat is used to divide all available space
+
+    grid-template-rows : repeat(count,1fr) //  1fr means 1 fraction of 100% width availablespace
+    grid-template-columns : repeat(count,1fr)
+
+
+ Grid Gaps :-
+ -They define the gaps between the lines.
+
+    row-gaps : 10px;
+    column-gaps : 10px;
+    grid-gap : rowGap columnGap
+
+Grid Column :-
+-Define an item's starting & Ending position inside the column.
+
+    grid-column-start : line_number;
+    grid-column-end :line_number;
+
+    grid-column : start_col / end_col
+
+Grid Row :-
+-Define an item's starting & ending position inside the row.
+
+    grid-row-start : line_number;
+    grid-row-end :line_number;
+
+    grid-row : start_row / end_row
+
+Grid Properties :-
+
+    justify-items : start / end / center; (container) // horizental
+    justify-self : start / end / center ; (self)
+
+    align-items : ; (container)  // vertical
+    align-self : ; (self)
+
+    place-items : ;
+    place-self : ;
+
+note :- display grid is block element so you will make it inline element to using display: inline-grid;
+
+
+
+CSS Animation :-
+- To animate CSS element
+
+    @keyframes myname{
+        from{ font-size: 20px; }
+        to{ font-size : 40px; }
+    }
+
+Props :- 
+
+    animation-name
+    animation-duration
+    animation-timing-function
+    animation-delay
+    animation-iteration-count : 1,2, infinite
+    animation-direction : normal,reverse, alternate
+    animation-fill-mode
+    animation-play-state
+
+Shorthand :- animation : myname 2s linear 3s infinite normal;
+
+( % ) in Animation :- 
+
+    @keyframes myname{
+        0%{
+            font-size : 10px;
+        }
+        50%{
+            font-size : 20px;
+        }
+        100%{
+            font-size : 30px;
+        }
+    }
+
+
+Media Queries :-
+
+- Help create a responsive website.
+- Media queries are used to apply different styles for different screen sizes and devices.
+
+
+Device / Enviroment :-
+
+1) width
+2) height
+3) orientation : portrait,landscape
+
+1) width(of viewport) :-
+
+   A)  @media(width : 400px){
+        div{
+            background-color : red ;
+        }
+    }
+
+   B)  @media(min-width : 400px){
+         div{
+            background-color : red ;
+        }
+    }
+    @media(max-width : 400px){
+         div{
+            background-color : red ;
+        }
+    }
+
+    C) @media(min-width : 400px) and (max-width : 600px){
+        div{
+            background-color : red ;
+        }
+    }
+
+2) height(of viewport) :-  Same as width
+
+3) orientation ( of viewport ) :-
+
+ A) @media( orientation : landscape) {
+        div{
+            background-color : red ;
+        }
+    }
+
+Z - index :- 
+
+- It decides the stack level of element.
+- Overlapping  elements with a larger z-index cover those with a smaller one.
+- static or defult position not working in z-index.
+- z-index only works on positioned elements (position: absolute, fixed, relative, or sticky).
+
+    z-index: auto(0);
+    z-index: 1 / 2;
+    z-index: -1 / -2;
+    
