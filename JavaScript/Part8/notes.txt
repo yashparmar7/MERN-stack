@@ -1,0 +1,91 @@
+Array Metods :-
+-this method take callback as an input. so it is higher order functions.
+-It is used to perform some operation on each element of an array.
+
+
+forEach :
+- this method is used to execute a provided function once for each array element.
+
+  arr.forEach(some func defination or name)
+
+
+Map :
+- this method is used to create a new array with the results of applying the provided function on every element in this array.
+- it returns a new array with the results of applying the provided function on every element in this array.
+
+let newArr = arr.map(some func)
+
+
+Filter :
+- this method is used to create a new array with all elements that pass the test implemented by the provided function.
+- it returns a new array with all elements that pass the test implemented by the provided function.
+
+let newArr = arr.filter(some func)
+
+
+Every :
+- this method is used to test whether all elements in the array pass the test implemented by the provided function.
+- it returns true if all elements in the array pass the test implemented by the provided function.
+- it returns false if at least one element in the array fails the test implemented by the provided function
+- it returns false if the array is empty.
+
+- same as logical AND
+
+arr.every(some func)
+
+
+Some :
+- this method is used to test whether at least one element in the array passes the test implemented by the provided function.
+- it returns true if at least one element in the array passes the test implemented by the provided function
+- it returns false if no elements in the array pass the test implemented by the provided function
+- it returns false if the array is empty.
+
+- same as logical OR
+
+arr.some(some func)
+
+
+
+Reduce :
+- this method is used to apply a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+- it returns the accumulated value.
+
+arr.reduce( reducer func with 2 variable for (accumulator, element));
+
+
+
+Default Parameters :
+-Giving a default value to the arguments.
+-If the argument is not provided, it will use the default value.
+-If the argument is provided, it will use the provided value.
+
+
+function func (a,b=2){
+  //do something
+}
+
+
+Spread :
+- Expands an iterable into multiple values
+- it is used to expand an array into a function call or into the new array constructor.
+- it is used to pass a array as arguments to a function.
+
+function func(...arr){
+  //do something
+}
+
+
+Rest :
+-Allow a function to take an indefinite number of arguments and bundle them in an array.
+- It is used to get the rest of the arguments in an array.
+- It is used to pass a variable number of arguments to a function.
+
+function func(a,b,...rest){
+  //do something
+  }
+
+
+Destructuring :
+- Storing values of array into multiple variables.
+- It is used to unpack values from an array or an object into distinct variables.
+
