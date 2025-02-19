@@ -1,0 +1,172 @@
+DOM in JS :
+- DOM stand for Document object model.
+-The DOM represent a document with a logical tree.
+-It allow us to manipulate/change webpage content.
+- DOM is a tree-like structure of objects that represent the elements of the HTML document.
+- DOM is a W3C (World Wide Web Consortium) standard.
+- DOM is a programming interface for HTML and XML documents.
+
+console.dir(document) :
+- This is a method that returns the document object.
+- It is used to display the document object in the console.
+- It is useful for debugging and inspecting the document object.
+
+
+
+
+Selecting Elements :
+- We can select elements using the document object.
+
+getElementById -
+- Return the element as an object.
+- This method returns the element that has the specified id.
+- It is case sensitive.
+- It returns null if no element is found.
+
+
+getElementByClassName -
+-Return the Elements as an HTML Collection or empty collection.
+- This method returns a collection of elements that have the specified class name.
+- It is case sensitive.
+- It returns an empty collection if no element is found.
+
+getElementByTagName -
+- Return the Elements as an HTML Collection or empty collection.
+- This method returns a collection of elements that have the specified tag name.
+- It is not case sensitive.
+- It returns an empty collection if no element is found.
+
+
+
+
+Query Selectors :
+- Allow us to use any CSS Selector
+- They are Select only single element.
+- Query selectors are a method of selecting elements in the DOM.
+- They are a more modern and powerful way of selecting elements.
+- They are supported in most modern browsers.
+- They are not supported in older browsers like IE8 and below.
+- They are case sensitive.
+- They return a NodeList or null.
+- They can be used to select elements based on their id, class, tag name, and other attributes.
+- It is a method of the document object.
+- It returns the elements that match the specified CSS selector.
+- It returns a NodeList of elements that match the specified CSS selector.
+
+Syntax :
+- document.querySelector(selector)
+- document.querySelectorAll(selector)
+
+Example :
+- document.querySelector('#myId')
+- document.querySelectorAll('.myClass')
+- document.querySelector('h1')
+
+- document.querySelectorAll('p')
+
+
+
+
+Setting Content in Object :
+
+Using Prop & Methods :
+
+innerText :
+-Shows the visible text contained in a node
+- It returns the text content of an element, including any text within the element's child nodes.
+- It returns a string.
+- It is a read-only property.
+
+textContent :
+- Shows all the full text
+- Shows the text content of a node and its descendants
+- It returns the text content of an element, including any text within the element's child nodes.
+- It returns a string.
+- It is a read-only property.
+
+innerHTML :
+- Shows the full markup (HTML)
+- Shows the HTML content of a node
+- It returns the HTML content of an element, including any HTML within the element's child nodes.
+- It returns a string.
+- It is a read-only property.
+- It can be used to set the HTML content of an element.
+
+
+
+manipulating attributes :
+
+Gettera And Setters :
+
+- setAttribute() : Sets the value of an attribute on the specified element.
+
+- getAttribute() : Returns the value of the attribute with the specified name.
+
+- removeAttribute() : Removes the attribute with the specified name from the element.
+
+- hasAttribute() : Returns a boolean value indicating whether the element has the specified attribute.
+
+Syntax :
+- setAttribute(name, value)
+- getAttribute(name)
+- removeAttribute(name)
+- hasAttribute(name)
+
+
+
+manipulating style :
+-using classList
+
+obj.classList
+
+classList.add() to add new classes
+classList.remove() to remove classes
+classList.toggle() to add or remove classes
+classList.contains() to check if a class exists
+classList.replace() to replace one class with another
+
+
+
+Navigation : DOM tree
+
+parentElement : Returns the parent element of the specified element.
+
+children : Returns a NodeList of child elements of the specified element.
+    
+    * childElementCount : Returns the number of child elements of the specified element.
+
+previousElementSibling : Returns the previous sibling element of the specified element.
+
+nextElementSibling : Returns the next sibling element of the specified element.
+
+
+
+
+Adding Elements :
+
+document.createElement('p')
+
+appendChild (element) :
+-Adds the specified element to the end of the list of child nodes of the specified parent node.
+
+append(element) :
+- Adds the specified element to the end of the list of child nodes of the specified parent node.
+
+prepend(element) :
+- Adds the specified element to the beginning of the list of child nodes of the specified parent node.
+
+insertAdjacent (where, element) :
+- Adds the specified element to the specified position in the list of child nodes of the specified parent node
+- where : beforebegin, afterbegin, beforeend, afterend
+- beforebegin : before the first child
+- afterbegin : after the first child
+- beforeend : before the last child
+- afterend : after the last child
+
+
+
+removeChild (element) :
+- Removes the specified element from the list of child nodes of the specified parent node.
+
+remove(element) :
+- Removes the specified element from the list of child nodes of the specified parent node.
