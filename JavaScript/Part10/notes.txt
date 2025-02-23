@@ -1,0 +1,81 @@
+DOM Events :
+- Events are signals that something has occurred. (user inputs / actions)
+- Events are triggered by user interactions (e.g. mouse clicks, keyboard input, etc.)
+- Events are handled by event listeners (functions that respond to events)
+
+onclick :
+- when an element is clicked.
+- The onclick event is triggered when an element is clicked.
+- The onclick event is commonly used to execute a function when an element is clicked.
+
+
+onmouseenter :
+-when mouse enters an element.
+- The onmouseenter event is triggered when the mouse enters an element.
+- The onmouseenter event is commonly used to execute a function when the mouse enters an element.
+
+
+
+
+Event listeners
+----------------
+- Event listeners are functions that respond to events.
+- Event listeners are attached to elements using the addEventListener method.
+- Event listeners can be attached to elements using the onclick attribute.
+
+
+addEventListener :
+- When an event is triggered, the event listener is called.
+- The event listener is a function that is passed to the addEventListener method.
+- The addEventListener method is used to attach an event listener to an element.
+
+syntax :
+element.addEventListener(event, callback)
+
+// notes : search on mdn addEventListener and read them.
+
+
+This Keyword In Event listener :
+- When 'this' is used in a callback of event handler of something ,it refers to that something.
+- In the context of event listeners, 'this' refers to the element that triggered the event.
+- The 'this' keyword is used to refer to the current element in the event listener function.
+
+
+
+
+Keyboard Events :
+- Keyboard events are triggered when a user interacts with the keyboard.
+- Keyboard events include keydown, keyup, and keypress events.
+- Keyboard events are commonly used to handle user input, such as form submissions and text input.
+
+// notes : search on mdn keyboard events and read them.
+
+
+
+
+
+Form Events :
+- Form events are triggered when a user interacts with a form.
+- Form events include submit, reset, and change events.
+- Form events are commonly used to handle user input, such as form submissions and changes to form fields.
+
+
+// notes : search on mdn form events and read them.
+
+event.preventDefault :
+- The preventDefault method is used to prevent the default action of an event.
+
+
+
+
+More Events :
+
+
+change event :
+- The change event occurs when the value of an element has been changed (only work on input,textarea and select element).
+- The change event is commonly used to handle changes to form fields.
+- The change event is triggered when the value of an element changes.   
+
+
+
+input event :
