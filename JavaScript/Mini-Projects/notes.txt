@@ -1,0 +1,16 @@
+Event Bubbling :
+Event bubbling is a process in which an event is triggered on an element and then it is propagated to all the parent elements until it reaches the root element. This is the default behavior of events in JavaScript.
+
+syntax :
+
+event.stopPropagation() :
+
+
+// activity perform todo list game
+
+
+
+Event Delegation :
+Event delegation is a technique where you attach an event listener to a parent element and then use event delegation to handle events on child elements. This is useful when you have a lot of child elements and you want to avoid attaching an event listener to each of them.
+
+event.target() :
