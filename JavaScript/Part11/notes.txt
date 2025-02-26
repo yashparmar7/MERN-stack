@@ -1,0 +1,81 @@
+JavaScript Call Stack :
+-call stack is a data structure that track which function run currently. 
+-The call stack is a region of memory that stores information about the active subroutines of a program.
+-The call stack is used to keep track of the order in which subroutines are called.
+-The call stack is a LIFO (Last In First Out) data structure.
+
+Visualization on the Call Stack :
+
+function one() {
+  return 1;
+}
+function two() {
+  return one() + one();
+}
+
+function three() {
+  let ans = two() + one();
+  console.log(ans);
+}
+
+three(); // Output : 3
+
+
+
+Breakpoints :
+
+Breakpoints are points in the code where the execution of the code is paused. They are used to debug the code and understand the flow of the code. Breakpoints can be set at specific lines of code, at specific functions, or at specific variables.
+
+
+JS is Single Threaded :
+
+JS is single-threaded, meaning that only one task can be executed at a time. This is
+different from multi-threaded languages like Java or C++, where multiple tasks can be executed concurrently.
+
+
+synchrous nature :
+JS is synchronous, meaning that the execution of the code is sequential. This means that the code is executed line by line, and each line is executed before the next one.
+
+asynchrous nature :
+JS is asynchronous, meaning that the execution of the code is not sequential. This means that the code can be executed concurrently, and the execution of the code can be paused and resumed at specific points.
+
+
+Callback Hell :
+Callback hell is a situation where a function is called multiple times, and each time it is called another function, and so on. This can lead to a situation where the code is difficult to read and understand.
+
+
+
+
+! Important Concepts :-
+
+1) Promises :
+
+-The promises object represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+Promises are used to handle asynchronous code in a more readable and manageable way. They are used to represent the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+
+resolve & reject:
+
+resolve() is a method of the promise object that is used to resolve the promise with a value.
+
+reject() is a method of the promise object that is used to reject the promise with a reason.
+
+OR pending : pending is the initial state of a promise, where it has not yet been resolved or rejected.
+
+
+
+then() & catch() :
+
+then() is a method of the promise object that is used to handle the resolved value of the promise.
+
+catch() is a method of the promise object that is used to handle the rejected value of the promise.
+
+
+
+promise chaining :
+promise chaining is a technique used to handle multiple promises in a sequence. It is used to handle the resolved value of one promise and pass it to the next promise in the chain.
+
+
+
+** => promises are rejected and resolved with some data ( valid result or errors)
+
+
