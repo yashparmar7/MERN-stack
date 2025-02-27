@@ -1,0 +1,34 @@
+Async Function :
+-Async function return promises by defualt.
+
+
+async & await keywords :
+
+1) async :
+- The `async` keyword is used to define an asynchronous function, which returns a promise.
+
+Create Async Function :
+
+async function greet(){
+    //something
+} // return promise
+ 
+let hello = async () =>{} // return promise
+
+2) await :
+-pauses the execution of its surrounding async function until the promise is settled (resolve or reject)
+- The `await` keyword is used to pause the execution of an asynchronous function until a promise is resolved or rejected.
+
+//* Handling Rejection with Await
+
+try {
+    let result = await promise;
+} catch (error) {
+        // handle the error
+    }
+
+
+
+
+
+
