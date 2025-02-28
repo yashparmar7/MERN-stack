@@ -1,0 +1,135 @@
+Terminal :
+- A text input and output environment.
+- A command-line interface.
+- A simple text editor.
+
+
+Different Terms :
+
+Command line :
+- any interface that is used by entering texual commands(gen. windowa centric)
+- A line of text in a terminal where you can enter commands.
+
+Terminal :
+- This is a type of command line (gen. Mac centric)
+- A text input and output environment.
+- A command-line interface.
+
+Console :
+- A command line interface used to work with your computer.
+
+
+
+Shell :
+- A program running on terminal.
+- A command-line interface that allows you to interact with your computer.
+- A program that interprets commands and executes them.
+
+
+
+Bash :
+- A popular shell on Mac OSI linux.
+- A type of shell.
+
+Z- Shell :
+- Another shell (default)
+
+
+
+Basic Commands :
+
+( ~ ) :- root / home directory
+( ~ / ) :- current directory
+
+1) ls :
+- list file (show my file)
+- list directory (show my directory)
+- list all files and directories in the current directory.
+
+2) pwd :
+- print working directory (show my current directory) ( where am i?)
+
+3) clear :
+- clear the terminal screen.
+- clear the command line interface.
+- clear the screen.
+
+
+Navigation :
+- Inside & Outside directories
+
+1) cd :
+- change directory (go to another directory)
+- change directory to a specific directory.
+
+cd Desktop
+
+cd ..  :
+- back directory
+
+
+
+
+Paths :
+
+- absolute path :
+cd /Users/yashp/Downloads
+
+- relative path :
+cd Downloads/gitPract
+
+- root directory (/)
+- home directory (~)
+- current directory (~ /)
+- parent directory (..)
+
+
+Making Directories :
+
+1) mkdir  :
+- make a new directory
+- make a new folder
+- create a new folder
+
+
+
+Flags :
+- flags are characters that we pass with commands to modify their behaviour.
+- flags are used to specify the type of file we want to delete/copy/move/rename.
+
+
+manual Command :
+ 
+1) man ls : (ls --help)
+- give info about command
+
+2) man mkdir :
+- give info about mkdir command
+
+
+
+Touch Command :
+- Used to create files 
+- Used to update the timestamp of a file
+- Used to create a new empty file with the specified name.
+
+Example :
+
+touch index.html
+touch app.js
+touch notes.txt
+touch README.md
+
+
+
+Deleting Files & Folders :
+
+1) rm :
+- removes files
+
+2) rmdir :
+- removes empty directories/Folders
+
+3) rm-rf :
+-remove any folders.
+- removes files and directories recursively.
