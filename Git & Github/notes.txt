@@ -1,0 +1,105 @@
+What is Git?
+
+- Git is fast and scalable.
+- it is most popular VCS.
+- Free & Open Source Version Control System.
+- Tool that help to tracks changes in code.
+- help to collaborate.
+- track history.
+
+
+What is Github?
+
+- Website where we host repositories online.
+
+
+
+Git Using :
+
+1) git config --global user.name "My Name"   OR
+1) git config --global user.email "myemail123@gmail.com"
+
+
+
+
+
+
+
+
+
+
+Basic commands :
+
+clone :  cloning a repository on our local machine.
+
+git clone <- some link ->
+
+
+status : display the state of the code.
+
+git status
+
+
+
+file status lifecycle :
+
+Untracked → Staged → Committed → Modified → Staged → Committed → Deleted → Staged Deletion → Committed
+ 
+Untracked :
+- You create a new file.txt in your working directory. Git doesn’t know about it yet.
+👉 git status shows: Untracked files: file.txt
+
+Tracked → Modified :
+- You add file.txt to Git with:
+git add file.txt → Now it's staged for commit.
+git commit -m "Add file.txt" → Now it’s committed.
+If you now edit it, it becomes modified.
+👉 git status shows: modified: file.txt
+
+
+Staged :
+- After editing, you run git add file.txt again to stage changes for the next commit.
+👉 git status shows: Changes to be committed: modified: file.txt
+
+Committed :
+- You run git commit -m "Update file.txt" → changes saved in local repo.
+
+Deleted (working dir) :	
+- You delete file.txt from your file system → Git notices.
+👉 git status shows: deleted: file.txt
+
+
+Staged Deletion	:
+- Run git rm file.txt or git add -u to stage the deletion.
+👉 git status shows: Changes to be committed: deleted: file.txt
+
+Restored :
+- If you didn’t commit yet and want to bring it back:
+git restore file.txt
+
+Ignored (optional) :    
+- If you add file.txt to .gitignore, Git will ignore it completely.
+Useful for temp or sensitive files.
+
+
+
+add : add new or changed files in your working directory  to the Git staging area.
+
+git add <- file name ->
+
+
+commit : it is the record of changes.
+
+git commit -m "Some message"
+
+
+push : upload local content to remote repo.
+
+git push origin main
+
+
+
+
+
+
+
