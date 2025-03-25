@@ -31,4 +31,78 @@ Node File :
 - node fileName.js
 
 
+Run JS file with Node:
+- node filename.js
+
+Process :
+- This object provide information about,and control over,the current Node.js process.
+
+- process.argv : returns an array containing the command line arguments passed when the Node.js process was luanched.
+
+
+module.exports :
+- requiring files
+
+require() : a built-in function to include external moduales that exist in separate files.
+
+module.exports : a special object
+
+
+
+
+Export Directory :
+
+1) require  : index.js  (entry point)
+
+
+
+NPM (Node Package Manager) :
+
+- npm is standard package manager for Node.js.
+- library of packages.
+- command line tool
+
+
+Package : A package in Node.js is a collection of files that includes a module and its metadata.
+
+
+Installing Package :
+
+npm install <- package name ->
+npm i <- package name ->
+
+
+node_modules : The node_modules folders contains every installed dependency for your project.
+
+package-lock.json : It records the exact version of every installed dependency, including it sub-dependencies and thier versions.
+
+
+package.json : The package.json file contains descriptive and functional metadata about a project, such as a name, version, and dependencies.
+
+npm install : The npm install command installs packages and their dependencies from the npm registry or from a package's package.json file. 
+
+
+npm init : The npm init command creates a new package.json file in the current directory.
+- npm init <initializer> can be used to set up a new or existing npm package.
+
+
+Local vs Global :
+
+npm install -g <- Package name ->
+
+npm link <- Package name ->
+
+
+
+
+
+require  v/s import :
+
+import {sum} from "./math.js"
+
+- We can't selectively load only the pieces we need with require but with import, we can selectively load only the piece we need, which can save memory.
+
+- Loading is synchronous for 'require' but can be asychronous for 'import'  
+
+note : If you're using require but want to switch to import/export, you can add a package.json file with "type": "module" by running npm init.
 

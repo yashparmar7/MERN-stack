@@ -1,0 +1,34 @@
+Library v/s Framework
+
+Library :
+- Library is a collection of pre-written code that can be used to perform specific tasks.
+- full control
+
+
+Framework :
+- A framework is set of pre-written code that provides a structure for developing software application.
+- limited control
+
+
+
+Express : 
+- Node.js web application framework that helps us to make web application.
+- Node.js web framework for building web applications and APIs.
+- It is used for server side programming.
+
+
+Why express used ?
+ 
+- listen for incoming request
+- parse request
+- to match response with routes
+- suitable response passed
+
+
+
+Note :
+- express are npm package
+- we can used them to install express package in local computer
+- we can install express package in global computer
+
+

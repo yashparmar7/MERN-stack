@@ -1,0 +1,14 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "This is my first projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Yash Parmar",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.8.0"
+  }
+}
