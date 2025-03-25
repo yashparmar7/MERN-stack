@@ -1,0 +1,34 @@
+What is Node.js ?
+- it is javscript runtime environment.
+- it is used for server side programming.
+
+- Nodejs not a programming language,library or framework.
+
+
+
+Node REPL :
+- Node.js has a built-in REPL (Read-Evaluate-Print Loop) that allows you to execute JavaScript code in real-time.
+- .help gives us commands.
+- .exit to exit the REPL.
+- .break to exit the current execution context.
+- .clear to clear the current execution context.
+- .load to load a file into the REPL.
+- .save to save the current execution context to a file.
+- .edit to open the current execution context in an editor.
+- .inspect to inspect an object.
+- .list to list the current execution context.
+- .open to open a file in the default editor.
+- .pwd to print the current working directory.
+- .restart to restart Node.js.
+- .scripts to list the scripts loaded into the REPL.
+- .settings to view or set the settings of the REPL.
+- .tls to create a secure REPL connection.
+- .use to use a module in the REPL.
+- .version to print the version of Node.js.
+
+
+Node File :
+- node fileName.js
+
+
+
