@@ -1,0 +1,135 @@
+EJS : Embeded JavaScript Templates
+
+- EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
+- It's a popular choice for Node.js projects, but it can also be used in other environments.
+- EJS supports a wide range of features, including loops, conditionals, and functions.
+- It's easy to learn and use, making it a great choice for developers of all skill levels
+- EJS is a great choice for building dynamic web applications, especially when combined with Node.js and Express.js.
+
+How to Use ?
+
+- npm init -y  // create package.json
+- npm i express  // add express js
+- npm i ejs // add ejs
+
+Note : Express are include by defualt Ejs . That reason we have not require Ejs package in code. 
+
+Using EJS :
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+  res.render("home.ejs");
+});
+
+
+res.render() 
+- This method are used to send File on browser. we don't use res.send() methos to send file on browser.
+- This method is used to render a view template.
+
+
+
+Views Directory :
+
+const path = require("path");
+app.set("views", path.join(__dirname, "/views"));
+
+
+
+Interpolation Syntax :
+- It refer to embedding expression into marked up text.
+- It is used to display dynamic data in the template.
+- It is denoted by <%= %> or <% %> or <%# %> or <%## %> etc.
+
+- The <%= %> syntax is used to display the result of an expression, while the <% %> syntax is used to execute a block of code.
+- the <% %>  'Scriptlet tag' for control flow, no output.
+- The <%# %> syntax is used to define a custom function or variable. Comment tag, no execution,no output.
+- The <%## %> syntax is used to define a custom function or variable with a specific name.
+
+- The <%- %> syntax is used to output the unescaped value into the template.
+
+
+
+Passing data to EJS :
+
+app.get("/rolldice", (req, res) => {
+  let diceVal = Math.floor(Math.random() * 6) + 1;
+  res.render("rolldice.ejs", { diceVal });
+});
+
+ejs file : 
+
+  <h1> Dice gave value :
+            <%= diceVal %>
+  </h1>
+
+
+ 
+Instagram EJS  (Activity) :
+
+create a  basic templates for instagram page based on following routes :
+/ig/:username
+
+
+
+Conditional Statment in EJS :
+
+- if : <% if (condition) { %>
+- else : <% } else { %>
+- elseif : <% } elseif (condition) { %>
+- endif : <% } %>
+- switch : <% switch (expression) { %> <% } %>
+- case : <% case (value) { %> <% } %>
+- break : <% break; %>
+- default : <% default { %>
+- endswitch : <% } %>
+
+
+- Adding conditional inside EJS :
+
+<% if(diceVal == 6) { %>
+<h2> Nice! Roll dice again. </h2>
+<% } %>
+
+
+
+Loop in EJS :
+- for : <% for (var i = 0; i < array.length; i++) {
+           endfor : <% } %>
+- foreach : <% foreach (var item in array) {
+               endforeach : <% } %>
+- while : <% while (condition) {
+             endwhile : <% } %>
+- forin : <% for (var key in object) {
+             endforin : <% } %>
+- forof : <% for (var item of array) {
+             endforof : <% } %>
+                 
+
+Example :
+
+<% for (user of followers) { %>
+<li> <%= user %>
+<% } %>
+
+
+
+Instagram page with EJS : (data.json)
+
+const instaData = require("./data.json");
+
+
+
+Serving static files :
+
+app.use(express.static(folder_name))
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+Includes :
+- include a file in the current template
+- include a file in the current template with a variable, a function, a condition and a loop
+
+<%- include("include/head.ejs"); %>
+
