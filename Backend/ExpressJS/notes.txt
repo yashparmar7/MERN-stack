@@ -32,3 +32,106 @@ Note :
 - we can install express package in global computer
 
 
+How to create Express file :
+
+- create project folder
+- using npm init to create package.json file 
+- install express package using npm install express
+- create index.js file
+
+// Create Server
+
+const express = require("express"); // 'express' is a function
+
+const app = express(); // calling the 'express' function returns an instance (an object), which we store in a variable
+
+console.dir(app); // 'app' is an object representing the Express application
+
+let port = 3000; // ports are the logical endpoints of a network connection that is used to exchange information between a webserver and a web client.
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+Note : press ctrl+c to stop running server on express 
+
+
+
+// Send request
+
+app.use((req,res) =>{
+    console.log("new incoming request");
+});
+
+
+// Sending response
+
+- We can send a request and get a response from the server. 
+- The communication happens over HTTP, and the response is usually sent in a text-based format. 
+- However, Express automatically parses (converts) the request and response data into objects for easier handling.
+- We can use the 'res' object to send a response back to the client.
+
+Syntax :   res.send("This is a basic Text");
+
+app.use((req, res) => {
+  //   console.log(req);
+  console.log("request received");
+
+  res.send("This is a basic Text");
+});
+
+
+
+
+// Routing 
+- It is process of selecting a path for traffic in a network or between or across multiple networks.
+- Routing is the process of determining how to handle a request based on the request's URL.
+
+
+// Send Get req res :
+
+syntax:
+app.get(path, callback)
+
+app.get("/", (req, res) => {
+  res.send("This is get request");
+});
+
+
+// Send Post req res
+
+syntax:
+app.post(path, callback)
+
+app.post("/", (req, res) => {
+  res.send("This is post request");
+});
+
+
+
+
+Nodemon :
+- To automatically restart server with code changes
+- It is a tool that automatically restarts the Node.js application when it detects any changes in the console.log("Server is running on port " + port);
+console.log("new incoming request");
+console.log("request received");application code.
+
+
+
+Path Parameters :
+- It is a parameter that is passed in the URL of the request.
+- It is used to pass data from the URL to the route handler function.
+- It is denoted by a colon (:) in the route path.
+
+syntax :
+req.params
+
+
+
+Query String :
+- It is a string of key-value pairs that are passed in the URL of the request.
+- It is used to pass data from the URL to the route handler function.
+- It is denoted by a question mark (?) in the URL.
+
+syntax:
+req.query
