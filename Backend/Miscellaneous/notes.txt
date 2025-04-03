@@ -1,0 +1,100 @@
+GET & POST Request :
+
+GET :
+- Used to GET some response 
+- Data sent in query strings
+- Limited data sent, String data & visible in URL
+
+
+POST :
+- Used to POST something ( for create/ write / update)
+- Data sent via request body (any type of data)
+
+
+// Handling Get Request
+
+example :
+
+app.get("/register", (req, res) => {
+  let { username, password } = req.query;
+  res.send(`Welcome to the page ${username}`);
+});
+
+
+// Handling Post Request
+
+- set up POST request route to get some response
+- use req.body to get the data sent in the request body
+- parse POST request data
+
+
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json()); // to support JSON-encoded bodies
+
+
+
+
+Object oriented programming :
+- To structure our code
+
+- prototypes    
+- new operators
+- constructor functions
+- classes
+- keywords (extend,super)
+- inheritance
+- encapsulation
+- polymorphism
+- abstraction
+
+
+
+Object Prototypes :
+
+- Prototypes are the mechanism by which javascript objects inherit features from one another.
+- Every object in JavaScript has a prototype, which is an object that is used as a template for creating new objects.
+
+- It is like a single template object that all objects inherit methods and properties from without having their copy.
+
+
+arr.__proto__ (reference)
+arr.prototype  (actial object)
+string.prototype (for string proto)
+
+- Every objects in JS has buit-in propertie, which is called ite prototype.
+- the prototype is itself object, so the prototype will have its own prototype, making what's called prototype chain.
+- The chain ends when we reach a prototype that has null for its own prototype.
+
+
+
+Factory Functions :
+- A function that create objects.
+- Factory functions are a type of function that returns an object.
+
+
+
+New Operator :
+- The new operator lets developer create an instance of a user-define object type or one of the built-in object type that has a constructor function.
+
+
+Constructor : 
+- it's special function.
+- it doesn't return anything.
+- start with capital letter basically.
+
+
+
+Classes :
+- classes are a template for creating objects.
+
+- The constructor method is a special method of a class for creating and initializing an object instance of that class.
+
+
+Inheritance :
+
+- Inheritance is a mechanism that allow us to create new classes on the basis od already existing classes.
+
+
+super keyword :
+- The super keyword is used to call methods of a parent class from a child class.
+- It is used to call the constructor of the parent class from the child class.
