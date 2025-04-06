@@ -1,0 +1,206 @@
+MySql : It is Database.
+
+Sql : It is language that will use to communicate with database.
+
+What is a Database ?
+======================
+- A database is a collection of data that is organized in a way that allows for efficient retrieval and manipulation of the data. It is a structured collection of data that is stored in a way that allows for efficient retrieval and manipulation of the data.
+
+- It is collection of data in a formate that can be easily accessed.
+
+Why database ?
+================
+- can store large data
+- features like security, scalability etc.
+- Easier to insert, update or delete data.
+- Easier to search data.
+- Easier to backup data.
+
+
+SQL vs NoSQL 
+================
+SQL : It is relational database management system. It is used to store data in a structured format.( data stored in tables)
+
+example :
+MySql,Oracle,PostgreSql etc.
+
+ex :
++---------+----------+--------+
+| id      | name    | age   |
++---------+----------+--------+
+| 1       | John    | 25    |
+| 2       | Alice   | 30    |
++---------+----------+--------+
+
+NoSQL : It is non relational database management system. It is used to store data in a unstructured format. (data store in document/key-val/graphs etc.)
+
+example :
+MongoDB, Cassandra, Redis, Neo4j etc.
+
+ex :
+{
+    "name" : "John",
+    "age" : 25,
+    "address" : {
+        "street" : "xyz",
+        "city" : "abc",
+        "state" : "pqr"
+        }
+}
+
+
+
+
+SQL : Structured Query Language
+=====================================
+- SQL is a programming language used to interact with relational database.
+- SQL is used to perform various operations like create, read, update and delete data.
+- SQL is case insensitive.
+
+
+Table :  (Relation)
+----------------
+- It is a structured collection of data organized into rows and columns, similar to a spreadsheet, used to store and manage information efficiently. 
+- Each row is called as record or tuple.
+- Each column is called as field or attribute.
+- Each field in a table has a unique name.
+
+
+
+
+Commands :
+----------------
+
+CREATE DATABASE db_name;    // database create
+
+DROP DATABASE db_name;      // data base remove / drop
+
+USE db_name;                // database use 
+
+
+
+// create table in database
+
+CREATE TABLE table_name(
+    col_name1 datatype constraint,
+    col_name2 datatype constraint,
+    col_name3 datatype constraint,
+);  
+
+
+
+Database Queries :
+----------------
+
+CREATE DATABASE db_name;
+CREATE DATABASE IF NOT EXISTS db_name;
+
+DROP DATABASE db_name;
+DROP DATABASE IF EXISTS db_name;
+
+SHOW DATABASES;
+SHOW TABLES;
+
+
+Table Queries :
+----------------
+
+Create :
+======== 
+
+CREATE TABLE table_name(
+    col_name1 datatype constraint,
+    col_name2 datatype constraint,
+    col_name3 datatype constraint,
+    );
+
+
+Insert :
+======
+
+INSERT INTO table_name (col_name1, col_name2, col_name3)
+VALUES ('value1', 'value2', 'value3');
+
+
+Select :
+=====
+
+SELECT col1,col2 FROM table_name;
+
+SELECT * FROM table_name; // to show all
+
+
+Update :
+======
+
+
+
+Alter :
+=====
+
+Truncate :
+========
+
+Delete :
+=====
+
+
+Note :
+------
+
+Constraint : Rules for data in table
+
+NOT NULL : Column can't have a null value
+UNIQUE   : All value in column are different 
+DEFAULT  : Sets the defualt value of a column 
+CHECK    : It can limit the values allowed in a column
+
+PRIMARY KEY : makes a column unique & not null but use only for one
+FOREIGN KEY : prevent action that would destroy links between tables
+
+
+
+What is keys?
+----------------
+- keys are special columns in the table 
+
+PRIMARY KEY :
+- it is a column (or set of columns) in a table that uniquely indentify each row.( a unique id)
+- There is only 1 PK & it should be NOT NULL.
+
+FOREIGN KEY :
+- A foreign key is column ( or set of column) in table that refer to the primary key in a FKs can have duplicate & null values.
+- There can be multiple FKs.
+ 
+
+Datatypes :
+
++----------------+---------------------------------------------------------------+-------------------------------------------------------------+------------------------------+
+| Data Type      | Description                                                   | Usage                                                       | Example                      |
++----------------+---------------------------------------------------------------+-------------------------------------------------------------+------------------------------+
+| INT / INTEGER  | Normal-sized integer (-2,147,483,648 to 2,147,483,647)        | Used for whole numbers                                      | age INT                     |
+| TINYINT        | Very small int (-128 to 127 or 0 to 255 UNSIGNED)             | Useful for flags (0/1), small counters                      | is_active TINYINT(1)        |
+| SMALLINT       | Small int (-32,768 to 32,767)                                 | Used for small-range values                                 | rating SMALLINT             |
+| MEDIUMINT      | Medium int (-8,388,608 to 8,388,607)                          | Used for medium-range values                                | population MEDIUMINT        |
+| BIGINT         | Large int (~±9 quintillion)                                   | Used for very large values                                  | total_views BIGINT          |
+| DECIMAL        | Fixed-point (exact, e.g., DECIMAL(10,2))                      | Used for exact values like currency                         | price DECIMAL(10,2)         |
+| FLOAT          | 4-byte float (~7 digits precision)                            | Used for approximate values                                 | temperature FLOAT           |
+| DOUBLE         | 8-byte float (~15 digits precision)                           | Higher precision float values                               | accuracy DOUBLE             |
+| CHAR           | Fixed-length string (0 to 255 characters)                     | When all values have same length                            | country_code CHAR(2)        |
+| VARCHAR        | Variable-length string (up 0 to 255)                          | Used for flexible text data                                 | name VARCHAR(255)           |
+| TEXT           | Large string (up to 65,535 characters)                        | Used for long text fields                                   | description TEXT            |
+| TINYTEXT       | Tiny text (up to 255 characters)                              | Small text fields                                           | short_note TINYTEXT         |
+| MEDIUMTEXT     | Medium text (up to 16,777,215 characters)                     | Mid-sized long text                                         | blog_content MEDIUMTEXT     |
+| LONGTEXT       | Very large text (up to 4,294,967,295 characters)              | Very large text data                                        | novel LONGTEXT              |
+| DATE           | Date in YYYY-MM-DD format                                     | To store calendar dates                                     | birth_date DATE             |
+| DATETIME       | Date & time in YYYY-MM-DD HH:MM:SS                            | Full timestamp                                              | created_at DATETIME         |
+| TIMESTAMP      | Auto-updated timestamp (UTC format)                           | Record creation/modification time                           | updated_at TIMESTAMP        |
+| TIME           | Time in HH:MM:SS format                                       | Store time of day                                           | event_time TIME             |
+| ENUM           | One value from list (max 65,535 items)                        | Choose one from a set                                       | status ENUM('on','off')     |
+| SET            | Multiple values from list (max 64 items)                      | Choose multiple from a set                                  | permissions SET('r','w')    |
++----------------+---------------------------------------------------------------+-------------------------------------------------------------+------------------------------+
+
+
+
+
+
