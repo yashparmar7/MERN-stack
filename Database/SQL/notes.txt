@@ -133,17 +133,45 @@ SELECT * FROM table_name; // to show all
 Update :
 ======
 
+UPDATE table_name
+SET col_name1 = 'value1',col_name2 = 'value2'
+WHERE condition;
 
-
-Alter :
+Alter : to cjange the schema 
 =====
 
-Truncate :
+ADD column :
+ALTER TABLE table_name
+ADD COLUMN col_name datatype constraint;
+
+DROP column:
+ALTER TABLE table_name
+DROP COLUMN col_name;
+
+RENAME column :
+ALTER TABLE table_name
+RENAME TO new_table_name; 
+
+CHANGE column:
+ALTER TABLE table_name
+CHANGE COLUMN old_col_name new_col_name new_datatype new_constraint;
+
+MODIFY column :
+ALTER TABLE table_name
+MODIFY COLUMN col_name new_datatype new_constraint;
+
+
+Truncate : to delete table data
 ========
+
+TRUNCATE TABLE table_name;
+
 
 Delete :
 =====
-
+ 
+DELETE FROM table_name
+WHERE condition;
 
 Note :
 ------
@@ -201,6 +229,108 @@ Datatypes :
 +----------------+---------------------------------------------------------------+-------------------------------------------------------------+------------------------------+
 
 
+Where Clause :  
+----------------
+- to define some conditions
+- to filter data
+
+
+SELECT col1,col2 FROM table_name WHERE conditions;
+
+
+WHERE CLAUSE Operators :
+------------------------
+
+Arithmatic Operator : + , - , *, /, %
+Comparison Operator : = , != , > , < , >= , >= , <= 
+Logical Operator : AND , OR , NOT, IN , BETWEEN, ALL, LIKE, ANY
+Bitwise Operator : & , |
 
 
 
+Frequently used operators :
+
+AND : to check for both conditions to be true
+OR : to check for one of the condition to be true
+NOT : to check for the condition to be false
+BETWEEN : Select for a given range
+IN : matches any value in the list
+
+
+
+Limit Clause :
+----------------
+- to limit the number of rows returned from a subquery
+
+SELECT col1,col2 FROM table_name
+LIMIT number;
+
+
+Order by Clause :
+----------------
+- to sort the data in ascending or descending order
+
+SELECT col1,col2 FROM table_name
+ORDER BY col_name(s) ASC;
+
+
+Aggregate Function :
+-------------------
+- It is pre-define functions
+- it's perform a calculation on set of values, and return a single value
+
+COUNT()
+SUM()
+AVG()
+MAX()
+MIN()
+
+ex :
+SELECT MAX(marks)
+FROM student;
+
+
+GROUP BY Clause :
+-------------------
+- to group the data by one or more columns
+- to perform aggregate function on each group of rows
+
+- Group rows that have the same value into summary rows.
+- It collects data from multiple records and groups the result by one more column.
+
+SELECT col1, col2
+FROM table_name
+GROUP BY col_name(s);
+
+note : Generally we use group by with some aggregation function.
+
+
+
+HAVING Clause :
+-------------------
+- to filter the grouped data
+
+- Similar to Where i.e. applies some conditions on rows.
+- But it is used when we want to apply any condition after grouping.
+
+SELECT col1, col2
+FROM table_name
+GROUP BY col_name(s)
+HAVING conditions;
+
+
+Note :
+- WHERE is for the table, HAVING is for a group
+- Grouping is neccessary for HAVING.
+
+
+
+
+General order by writing condition :
+
+SELECT column(s)
+FROM table_name
+WHERE condition
+GROUP BY column(s)
+HAVING condition
+ORDER BY column(s) ASC;
