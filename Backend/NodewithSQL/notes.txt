@@ -1,0 +1,67 @@
+Faker package : to generate the fake data
+
+npm i @faker-js/faker
+
+ex :
+
+const { faker } = require("@faker-js/faker");
+
+let createRandomUser = () => {
+  return {
+    id: faker.string.uuid(),
+    username: faker.internet.username(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  };
+};
+
+console.log(createRandomUser());
+
+
+
+
+MySQL2 package :
+- to connect  Node with MySQL database and perform CRUD operations 
+
+//install
+npm i mysql2 //install mysql 
+
+//connect
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "yash3547",
+  database: "test",
+});
+
+// perform query
+connection.query("query", (error,results,fields) => {
+});
+
+
+connection.end(); // to close connection
+
+
+
+Using SQL from CLI  :
+
+& "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p
+
+// to run without workbench
+create schema.sql
+source schema.sql  //CLI
+
+
+
+Projects REST APIs :
+
+GET  :  "/"  -> show no of user in DB 
+
+GET : "/user"  -> show users (id,name,email)
+
+POST :  "/user"  -> create new user
+
+GET : "/user/:id/edit" : -> to get form to edit username based on id , This form require a password 
+PUT/ PATCH  :  "/user/:id"  -> update user
+
+DELETE :  "/user/:id"  -> delete user
