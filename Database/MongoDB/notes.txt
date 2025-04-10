@@ -1,0 +1,215 @@
+BSON DATA: Binary JSON
+
+---------------------------------------------------------------------------------------
+| Feature             | JSON                          | BSON                          |
+---------------------------------------------------------------------------------------
+| Format              | Text-based                    | Binary-based                  |
+| Readability         | Human-readable                | Not human-readable            |
+| Speed (Parsing)     | Slower                        | Faster                        |
+| File Size           | Smaller                       | Larger (due to metadata)      |
+| Data Types          | Limited (e.g., string, number)| Richer (e.g., Date, ObjectId) |
+| Use Case            | APIs, configs                 | MongoDB internal storage      |
+| Supports Comments   | No                            | No                            |
+| Easily Editable     | Yes                           | No                            |
+| Language Support    | Widely supported              | Mostly used with MongoDB      |
+---------------------------------------------------------------------------------------
+
+
+Collection :
+============
+- A collection is a group of documents in a MongoDB database. It is similar to a table in a relational database management system.
+
+documents : mongo stores data in form of documents. (BSON docs)
+
+collection : MongoDB stores documents in collection.
+
+
+CRUD Operation in MongoDB :
+==========================
+
+INSERT in DB :
+----------------
+- Insert operation is used to add a new document to a collection in MongoDB.
+- The insert operation can be performed using the insertOne() method of the collection object.
+- The insertOne() method takes a document as an argument and inserts it into the collection.
+- The insertOne() method returns a result object that contains the inserted document and an acknowledgement of the insert operation.
+
+- The insertMany() method is used to insert multiple documents into a collection in MongoDB.
+- The insertMany() method takes an array of documents as an argument and inserts them into the collection
+- The insertMany() method returns a result object that contains the inserted documents and an acknowledgement of theinsert operation.
+
+
+syntax :
+********
+db.collection.insertOne() // insert a single document into a collection
+db.collection.insertMany() // insert multiple documents into a collection  
+db.collection.find() // to show collection data
+
+
+
+example :
+**********
+db.students.insertOne({name: "John", age: 20})
+db.students.insertMany([{name: "John", age: 20}, {name: "Alice", age: 22}])
+
+
+note : if collection does not exists, MongoDB creates the collection when you first store data for that collection.
+
+
+
+
+FIND in DB :
+----------------
+- The find() method is used to retrieve documents from a collection in MongoDB.
+- The find() method takes a query as an argument and returns a cursor (reference to original)that can be used to iterate over the documents that match the query.
+- The find() method returns a cursor object that can be used to iterate over the documents that match the query.
+- The find() method can be used to retrieve all documents in a collection or to retrieve documents that match a specific query.
+
+syntax:
+********
+db.collection.find() // to show collection data
+db.collection.find({key:value}) // to show collection data that match the query
+db.collection.find({key1:value1, key2:value2}) // to show collection data that match the query
+db.collection.findOne() // to show first document
+
+example :
+**********
+db.students.find()
+db.students.find({name: "John"})    
+db.students.find({name: "John, age : 20"})    
+db.students.findOne({name: "John"})
+
+
+Query Operators :
+-----------------
+
+comparision :
+----------------
+- $eq : equal to
+- $ne : not equal to
+- $gt : greater than
+- $lt : less than
+- $gte : greater than or equal to
+- $lte : less than or equal to
+- $in : value in array
+- $nin : value not in array
+
+example :
+**********
+db.students.find({age:{$gt:20}}) // to show students with age greater than
+db.students.find({age:{$lt:20}}) // to show students with age less than
+db.students.find({age:{$gte:20}}) // to show students with age greater than
+db.students.find({age:{$lte:20}}) // to show students with age less than
+db.students.find({age:{$in:[20,30,40]}}) // to show
+db.students.find({age:{$nin:[20,30,40]}}) // to show
+
+
+
+logical :
+----------------
+- $and : logical and
+- $or : logical or
+- $not : logical not
+- $nor : logical nor
+
+example :
+**********
+db.students.find({$and:[{age:{$gt:20}},{name:{$eq: "John"}}]}) // to show students with age greater than 20 and name John
+db.students.find({$or:[{age:{$gt:20}},{name:{$eq: "John"}}]}) // to show students with age greater than 20 or name John
+
+
+element :
+----------------
+- $type : data type
+- $exists : 
+
+example :
+**********
+db.students.find({age:{$type: "int"}}) // to show students with age as int
+
+
+Array :
+----------------
+- $all : all elements in array
+- $elemMatch : element in array
+- $size : size of array
+
+example :
+**********
+db.students.find({scores:{$all:[90,95]}}) // to show students with scores array containing both 90 and 95
+
+
+
+UPDATE in DB :
+----------------
+
+db.collection.updateOne() // update at most a single document that match a specified filter even though multiple documents may match the specified filter.
+db.collection.updateMany() // update all documents that match a specified filter.
+db.collection.replaceOne() // replace a single document that match a specified filter with the specified replacement document
+
+
+syntax:
+********
+db.collection.updateOne(filter, update, options)
+db.collection.updateMany(filter, update, options)
+db.collection.replaceOne(filter, replacement, options)
+
+example:
+**********
+db.students.updateOne({name: "John"},{$set:{age:25}}) // update
+db.students.updateMany({name: "John"},{$set:{age:25}}) // update
+db.students.replaceOne({name: "John"},{name: "Om",age:22})
+
+
+
+Update Operators:
+-----------------
+$set         : Sets the value of a field in a document.
+$unset       : Removes the specified field from a document.
+$addFields   : Adds new fields to documents. If the field already exists, it will overwrite the existing value.
+$project     : Specifies the fields to include or exclude in the result documents.
+$replaceRoot : Replaces the existing root document with the specified embedded document.
+$replaceWith : Replaces the input document with the specified document.
+
+
+Nesting :
+----------------
+
+example:
+**********
+{
+    _id: ObjectId("64512vf5v40f5vvdv56cd"),
+    name: "John",
+    address: {
+        street: "123 Main St",
+        city: "New York",
+        state: "NY",
+        zip: "10001"
+        }
+}
+
+to find :
+**********
+db.collection.find({name: "John", "address.city": "New York"})
+db.collection.findOne({"address.state": "NY"})
+
+
+DELETE in DB :
+----------------
+deleteOne :
+db.collection.deleteOne(filter,options)
+
+deleteMany :
+db.collection.deleteMany(filter,options)
+
+db.collection.drop() // delete all documents in the collection
+
+db.dropDatabase() // delete database
+
+
+
+
+
+
+
+
