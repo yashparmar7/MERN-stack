@@ -208,8 +208,302 @@ db.dropDatabase() // delete database
 
 
 
+PART : 2
+==========
+----------
+==========
 
 
 
 
+Mongoose :
+==========
+- A library that create a connection between MongoDB & Node JS Javascript Runtime Environment.
+- It is a MongoDB object modeling tool designed to work in an asynchronous environment.
+- It is ODM (Object Data Modeling ) library.
+- It is used to interact with MongoDB database from Node JS application.
+- It is used to create, read, update, delete data in MongoDB database from Node JS application
+- It is used to create a schema for MongoDB database from Node JS application.
+
+example to connect mongoose with js :
+---------------------------------------
+
+const mongoose = require("mongoose"); //! reqire mongoose
+
+//! connect with mongodb
+main()
+  .then(() => {
+    console.log("connected to database");
+  })
+  .catch((err) => console.log(err));
+
+async function main() {
+  await mongoose.connect("mongodb://127.0.0.1:27017/test");
+}
+
+
+
+Schema :
+========
+- A schema is a blueprint or a template that defines the structure of a MongoDB document.
+- Schema defines the shape of the documnet within that collection.
+
+define schema :
+----------------
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    age: Number
+    });
+
+
+Schema Datatypes :
+-------------------
+- String : It is used to store string data type.
+- Number : It is used to store number data type.
+- Date : It is used to store date data type.
+- Buffer : It is used to store binary data type.
+- Boolean : It is used to store boolean data type.
+- Object : It is used to store object data type.
+- Array : It is used to store array data type.
+- Mixed : It is used to store mixed data type.
+- ObjectId : It is used to store ObjectId data type.
+- Decimal128 : It is used to store decimal128 data type.
+- Map : It is used to store map data type.
+- Timestamp : It is used to store timestamp data type.
+
+
+
+Model :
+======
+- A model is a class that is used to interact with the database.
+- Model in mongoose is a class with which we construct document.
+
+define:
+--------
+const User = mongoose.model('User', userSchema);
+
+
+
+Insert :
+========
+
+* Insert One :
+--------------
+
+const user1 = new User({
+    name: 'yash',
+    email: 'yash@example.com',
+    age: 25
+});
+
+user1.save()  // to save in DB
+
+
+*Insert Many:
+----------------
+
+User.insertMany([
+    { name: 'yash', email: 'yash@example.com', age: 25},
+    { name: 'om', email: 'om23@example.com', age:21}
+])
+.then((res)=>{
+    console.log(res);
+})
+
+
+Note :
+++++++
+
+- Mongoose uses Operation Buffering
+- mongoose lets you start using your models immediately, without waiting for mongoose to establish a connection to MongoDB.
+
+
+
+
+Find :
+=======
+
+Model.find() //return a Query Object
+
+Model.find().exec() // return a promise
+
+Model.find().then((res)=>{
+    console.log(res);
+    })
+
+
+* Find One :
+------------
+Model.findOne()  // return single result
+
+
+*find by Id :
+----------------
+Model.findById()  // return single result by id
+
+
+Note : 
+++++++
+- Mongoose Queries are not promise, but they have a .then()
+
+
+
+Update :
+=========
+Model.update() // return a Query Object
+
+
+* update one :
+----------------
+Model.updateOne() // return a promise
+
+* update Many :
+----------------
+Model.updateMany() // return a promise
+
+
+* find one and update
+----------------------
+Model.findOneAndUpdate() // return a promise
+
+
+* find by id and update
+------------------------
+Model.findByIdAndUpdate() // return a promise
+
+
+
+Delete :
+========
+
+*delete one :
+----------------
+Model.deleteOne() // return a promise
+
+*delete Many :
+----------------
+Model.deleteMany() // return a promise
+
+
+*find by id and delete
+------------------------
+Model.findByIdAndDelete() // return a promise
+
+*find one and delete
+----------------------
+Model.findOneAndDelete() // return a promise
+
+
+
+Schema Validation :
+====================
+- Basically, Rules for schema
+- It's used to validate the data before it's saved to the database.
+
+ex :
+----
+const bookSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  author: {
+    type: String,
+  },
+  price: {
+    type: Number,
+  },
+});
+
+SchemaType Options :
+---------------------
+
+1. required : true / false
+   - Marks the field as required (mandatory).
+
+2. default : value
+   - Specifies a default value for the field if none is provided.
+
+3. select : true / false
+   - Whether to include the field in query results by default.
+
+4. validate : function or object
+   - Custom validation logic.
+   - Can be a function or an object with `validator` and `message`.
+
+5. get : function
+   - Function to transform the value when retrieving it from the database.
+
+6. set : function
+   - Function to transform the value before saving it to the database.
+
+7. immutable : true / false
+   - Prevents the value from being changed after it is initially set.
+
+8. transform : function
+   - Function to alter the output during `.toObject()` or `.toJSON()` conversion.
+
+
+
+example :
+
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    set: v => v.toLowerCase(),
+    get: v => v.charAt(0).toUpperCase() + v.slice(1),
+  },
+  age: {
+    type: Number,
+    default: 18,
+    validate: {
+      validator: v => v >= 0,
+      message: props => `${props.value} is not a valid age!`
+    },
+    immutable: true
+  },
+  password: {
+    type: String,
+    select: false
+  }
+});
+
+
+Note:
+-----
+- The validators are only triggered during insertion, not on updates.
+
+-To enable validation during updates, use:
+
+User.findByIdAndUpdate(id, updateData, { runValidators: true })
+
+
+
+Custom Error :
+==============
+- You can define custom error messages in Mongoose validators using the `required`, `validate`, or other validation options.
+
+example :
+
+name: {
+  type: String,
+  required: [true, "Name field is required"]
+}
+
+
+Handling error :
+================
+- You can handle errors in Mongoose using the `catch` method of the promise returned by the `save` method.
+
+user.save()
+  .then((res) => {
+    console.log(res);  // Success: logs saved document
+  })
+  .catch((err) => {
+    console.log(err.errors.[field].properties.message); // Custom error message for 'category' field
+  });
 
