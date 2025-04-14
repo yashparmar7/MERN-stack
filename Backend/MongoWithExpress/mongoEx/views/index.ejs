@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chatsapp</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+
+        <header class="header">
+            <h1>📨 Chatsapp</h1>
+            <form action="/chats/new" method="get">
+                <button class="new-chat-btn" type="submit">+ New Chat</button>
+            </form>
+        </header>
+
+        <main class="chat-list">
+            <% for(let chat of chats) { %>
+            <article class="chat">
+                <p><strong>From:</strong> <em><%= chat.from %></em></p>
+
+                <div class="msg">
+                    <p><strong>Message:</strong> <%= chat.message %></p>
+                    <form action="/chats/<%= chat.id %>/edit" method="get">
+                        <button>Edit Message</button>
+                    </form>
+                    <form action="/chats/<%= chat.id %>?_method=DELETE"
+                        method="post">
+                        <button>Delete Message</button>
+                    </form>
+                </div>
+
+                <p><strong>Received by:</strong> <em><%= chat.to %></em></p>
+
+                <div class="timestamp">
+                    <small>🕒 <%= chat.created_at.toString().split(" ")[4]
+                        %></small><br />
+                    <small>📅 <%= chat.created_at.toString().split(" ").slice(0,
+                        4).join(" ") %></small>
+                </div>
+            </article>
+            <% } %>
+        </main>
+
+    </body>
+</html>
