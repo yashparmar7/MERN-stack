@@ -1,34 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>StayNest</title>
-    </head>
-    <body>
-        <h1>Add New Listing</h1>
+<% layout('./layouts/boilerplate.ejs') -%>
 
-        <form action="/listings" method="POST">
+<body>
 
-            <input type="text" name="listing[title]" placeholder="Enter title"
-                required><br><br>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="mt-5">Create a New Listing</h1>
+            <form action="/listings" method="POST" class="mt-3  mb-5">
 
-            <textarea name="listing[description]"
-                placeholder="Enter description" required></textarea><br><br>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name="listing[title]"
+                        placeholder="e.g. Cozy Beachfront Apartment"
+                        class="form-control"
+                        id="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description"
+                        class="form-label">Description:</label>
+                    <textarea name="listing[description]"
+                        placeholder="e.g. Spacious 1BHK near DN Nagar metro, fully furnished with sea view"
+                        class="form-control"
+                        id="description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Link:</label>
+                    <input type="url" name="listing[image]"
+                        placeholder=" URL/link"
+                        class="form-control"
+                        id="image">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="number" name="listing[price]"
+                            placeholder="e.g. 32000000"
+                            min="0"
+                            class="form-control"
+                            id="price" required>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" name="listing[country]"
+                            placeholder="India"
+                            class="form-control"
+                            id="country" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" name="listing[location]"
+                        placeholder="e.g. VIP road, Surat"
+                        class="form-control"
+                        id="location" required>
+                </div>
 
-            <input type="url" name="listing[image]"
-                placeholder="Enter image URL/link"><br><br>
-
-            <input type="number" name="listing[price]" placeholder="Enter price"
-                min="0" required><br><br>
-
-            <input type="text" name="listing[location]"
-                placeholder="Enter location" required><br><br>
-
-            <input type="text" name="listing[country]"
-                placeholder="Enter country" required><br><br>
-
-            <button type="submit">Add Listing</button>
-        </form>
-    </body>
-</html>
+                <button class="btn add-btn">Add Listing</button>
+            </form>
+        </div>
+    </div>
+</body>
