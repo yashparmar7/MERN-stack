@@ -1,0 +1,19 @@
+Middlewares :
+=============
+- it is an intermediary (link)
+
+
+Request ---------------->   Middleware ----------------> Response
+
+in Express :
+============
+- it is a function that takes 3 arguments (req, res, next)
+- Middleware in express are function that comes into play after server receives the request and before the response is sent to the client.
+
+Common middleware functions :
+=============================
+- methodOverride
+- bodyParser
+- express.static 
+- express.urlencoded
+
