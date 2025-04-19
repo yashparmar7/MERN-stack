@@ -17,3 +17,60 @@ Common middleware functions :
 - express.static 
 - express.urlencoded
 
+What do middlewares do?
+==========================
+
+= middleware function perform the following tasks:
+
+- Execute any code.
+- Makes change to the request and response object
+- End the request-response cycle.
+- call the next middleware function in the stack
+
+
+
+Create middleware :
+=====================
+
+app.use(middleware)
+
+ex:
+app.use(bodyParser.json())
+
+app.use((req,res)=>{
+    console.log("Hello from middleware");
+})
+
+
+
+Using next:
+================
+- The next middleware function is commonly denoted by a variable named next.
+
+app.use((req,res,next)=>{
+    console.log('Time', Date.now());
+    next();
+})
+
+
+- If the current middleware function does not end the request-response cycle, It must be call next() to pass control to the next middleware function.
+
+
+
+Types of middleware :
+=====================
+- Application-level middleware: These middleware functions are applied to all incoming requests to an Express application.
+- Router-level middleware: These middleware functions are applied to all incoming requests to a specific router.
+- Error-handling middleware: These middleware functions are applied to all error requests to an Express application.
+- Built-in middleware: These middleware functions are provided by Express and can be used to perform common tasks
+- Third-party middleware: These middleware functions are provided by third-party libraries and can be used to perform
+                          common tasks.
+
+
+
+
+
+Handling Errors :
+==================
+
+- Express default Error Handling
