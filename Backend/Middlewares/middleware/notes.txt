@@ -74,3 +74,52 @@ Handling Errors :
 ==================
 
 - Express default Error Handling
+
+
+Custom :
+================
+- Error handling middleware
+
+app.use((err,req,res,next)->{
+    console.log("-----------ERROR----------");
+    next(err);
+})
+
+
+Using Create Error class :
+==========================
+- Create a custom error class that extends the Error class.
+- Use the error class to create an error object.
+
+ex :
+=====
+
+class ECustomError extends Error {
+  constructor(status, message) {
+    super();
+    this.status = status;
+    this.message = message;
+  }
+}
+
+Defualt status and message for throw error:
+=====================================
+
+app.use((err,req,res,next)->{
+   let {status= 500, message= "Some Error Occurred"} = err;
+   res.status(status).send(message);
+})
+
+
+
+Handling Async Errors:
+=====================
+
+app.get("/chats/:id",async(req,res,next)=>{
+    let {id}= req.params;
+    let chat = await Chat.findById(id);
+    if(!chat){
+       return next(new CustomError(404,"Chat not found"));
+        }
+      res.render("edit.ejs",{chat})
+})

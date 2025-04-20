@@ -1,0 +1,237 @@
+/* ===============================
+   Root Variables & Base Styles
+   =============================== */
+:root {
+    --primary: #00acc1;
+    --primary-dark: #008c9e;
+    --bg-light: #f4f6f8;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-medium: #555;
+    --accent: #e0f7fa;
+    --accent-border: #00acc1;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+    --info: #3b82f6;
+    --info-dark: #2563eb;
+}
+
+/* Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    padding: 20px;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* ===============================
+   Chat Styles
+   =============================== */
+.chat {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.chat:hover {
+    transform: scale(1.02);
+}
+
+.chat p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.chat .msg {
+    background-color: var(--accent);
+    border-left: 4px solid var(--accent-border);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/* ===============================
+   Form Styles
+   =============================== */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.chat-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--text-dark);
+}
+
+.chat-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-medium);
+}
+
+.chat-form input,
+.chat-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.chat-form input:focus,
+.chat-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 172, 193, 0.2);
+}
+
+.chat-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-form button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ===============================
+   Utility Styles
+   =============================== */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 16px;
+}
+
+/* ===============================
+   New Chat Button
+   =============================== */
+.new-chat-btn {
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.new-chat-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ===============================
+   Header
+   =============================== */
+header.header {
+    color: #000;
+    font-style: italic;
+    padding: 20px 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 14px var(--shadow);
+}
+
+header.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   Action Buttons inside .msg
+   =============================== */
+.chat .msg form button {
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: var(--info);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat .msg form button:hover {
+    background-color: var(--info-dark);
+}
+
+.chat .msg form:nth-child(3) button {
+    background-color: var(--danger);
+}
+
+.chat .msg form:nth-child(3) button:hover {
+    background-color: var(--danger-dark);
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .chat-form h2 {
+        font-size: 20px;
+    }
+
+    .chat-form input,
+    .chat-form textarea,
+    .chat-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .chat-form h2 {
+        font-size: 18px;
+    }
+
+    .chat-form input,
+    .chat-form textarea,
+    .chat-form button {
+        font-size: 12px;
+    }
+}

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const ExpressError = require("./ExpressError.js");
 
 //! middleware
 
@@ -18,7 +19,7 @@ const checkToken =
     if (token === "giveaccess") {
       next();
     } else {
-      res.status(401).send("Access denied");
+      throw new ExpressError(401, "Access Denied");
     }
   });
 
@@ -34,10 +35,21 @@ app.get("/random", (req, res) => {
   res.send("random path");
 });
 
-//! Error middleware
-app.use((req, res) => {
-  res.status(404).send("Page Not found");
+//! Error handler
+app.get("/err", (req, res) => {
+  abcd = abcd;
 });
+
+app.use((err, req, res, next) => {
+  let { status = 500, message = "Some Error Occurred" } = err;
+  res.status(status).send(message);
+});
+
+//! Error middleware
+// app.use((req, res) => {
+//   res.status(404).send("Page Not found");
+// });
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
