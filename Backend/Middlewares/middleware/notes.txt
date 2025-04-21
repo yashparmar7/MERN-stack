@@ -123,3 +123,23 @@ app.get("/chats/:id",async(req,res,next)=>{
         }
       res.render("edit.ejs",{chat})
 })
+
+
+Using try..Catch 
+==================
+- Wrap the code in a try block.
+- Catch the error in the catch block.
+- Use the next() function to pass the error to the error-handling middleware.
+- Use the res.status().send() method to send a response to the client.
+
+
+Using wrapAsync function :
+==========================
+ex:
+----
+function asyncWrap(fn) {
+  return function (req, res, next) {
+    fn(req, res, next).catch((err) => next(err));
+  };
+}
+
