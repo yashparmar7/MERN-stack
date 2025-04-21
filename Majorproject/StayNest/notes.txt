@@ -1,0 +1,26 @@
+Form Validation :
+Form validation is a crucial step in ensuring data integrity and security.
+It helps prevent malicious data submissions and enhances user experience by providing immediate feedback.
+Ensure that all input data meets the required criteria before processing.
+
+Client side:
+===========
+Implement form validation using JavaScript to check for empty fields, correct data formats, and enforce any additional rules specific to the application.
+
+Server side:
+============
+Implement validation logic to verify incoming data against the expected schema, returning appropriate error messages for any discrepancies.
+
+
+
+Use Bootstrap validation 
+==========================
+==========================
+
+
+
+
+Joi tool :
+==========
+to validate are schema .
+Joi is a powerful schema description language and data validator for JavaScript, allowing you to define complex validation rules with ease.
