@@ -242,3 +242,19 @@ addData();
 NOTE :
 
 Read MongoDB document : 6 rules of thumb for mongoDB schema
+
+
+
+Handling Deletion : using mongoose middlewares
+==============================================
+
+we can use 2 middlewares:
+   pre:  run before the query is execute
+   post: run after the query is execute
+
+Note : if we use findByIdAndDelete then mongoose automatically trigger findOneAndDelete. 
+
+Schema.pre("findOneAndDelete", async()=>{
+  console.log("Pre Middlewares");
+})
+
