@@ -24,3 +24,8 @@ Joi tool :
 ==========
 to validate are schema .
 Joi is a powerful schema description language and data validator for JavaScript, allowing you to define complex validation rules with ease.
+
+
+$pull : delete review
+======
+The pull operator removes from an exisiting array all instances of a values that match a specified comdition. 
