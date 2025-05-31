@@ -29,3 +29,21 @@ Joi is a powerful schema description language and data validator for JavaScript,
 $pull : delete review
 ======
 The pull operator removes from an exisiting array all instances of a values that match a specified comdition. 
+
+
+
+Express router :
+================
+- Express router are a way to organize your Express application such that our primary app.js file. does not become loaded.
+
+
+const router = express.Router() // create new router object
+
+
+mergeParams :   
+============
+- This feature is available on express version 4.5.0 and above. You need to pass mergeParams as true if you want to access params from the Parent route via the child route.
+
+const router = express.Router({ mergeParams: true })
+
+
