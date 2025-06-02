@@ -47,3 +47,57 @@ mergeParams :
 const router = express.Router({ mergeParams: true })
 
 
+Cookies :
+=========
+- HTTP cookies are small blocks of data created by a web server while a user is browsing a website and placed on the user's computer or other device by the user's web browser.
+
+
+How to send cookies in express?
+==================================
+
+app.get("/setcookies  / getcookies",(req,res)=>{
+    res.cookie("greet","namste");
+    res.cookie("origin","India");
+    res.send("We sent you a cookies");
+});
+
+
+Cookie-Parser (read)  : (Package)
+================================
+- we have not pass the cookie directly in root, so we can use cookie-parser middleware package. 
+
+const cookieParser = require(" cookie-parser ");
+app.use(cookieParser());
+
+app.get("/getcookies",(req,res)=>{
+    console.dir(req.cookies);
+    res.send("got the cookies");
+});
+
+app.get("/getcookies",(req,res)=>{
+    let{ name= "anonymous" }= req.cookies;
+    res.send(`Hi, ${name}`);
+});
+
+
+
+Signed Cookies :
+================
+- Signed Cookie are the tricks to check send cookies are original or not.
+- Indicates if the cookies should be signed.
+
+- Send Signed Cookies
+
+app.use(cookieParser("secretcode"));
+
+app.get("/getsignedcookies",(req,res)=>{
+    req.cookie("color","red", {signed :true})
+    res.send("done!");
+});
+
+- Verify Signed Cookie
+
+app.get("/verify",(req,res)=>{
+    res.send(req.signedCookies);
+});
+
