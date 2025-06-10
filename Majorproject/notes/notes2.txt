@@ -1,0 +1,51 @@
+Authentication :
+- Authentication is the process of verifying who someone is
+
+
+Authorization :
+- Authorization is the process of verifying what specific application, files, and data a user has access to
+
+
+
+Store Password :
+- We naver store the password as it is. We store their hashed form.
+
+
+
+Password                                                                how it is stored 
+                    -------->   Hashing Function  ---------->        
+"HelloWorld"                                                        "936a185caaa845dc5dc5c8w2ada12d12"
+
+
+
+
+Hashing :
+
+- For every input, there is a fixed output.
+- They are one-way functions, we can't get input from output.
+- For a different input, there is a different output but of same length.
+- Small changes in input should bring large changes in output
+
+
+Hashing functions : 
+
+SHA256
+MD5
+CRC
+bcrypt
+
+
+Salting :
+- Password salting is a technique to protect password stored in databases by adding a string 32 or more characters and then hashing them.
+
+
+
+Passport.js :  website check in 
+
+npm i passport
+
+npm i passport-local 
+
+npm i passport-local-mongoose
+
+
