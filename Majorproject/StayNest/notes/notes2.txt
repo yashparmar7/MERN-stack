@@ -49,3 +49,43 @@ npm i passport-local
 npm i passport-local-mongoose
 
 
+
+
+Configurig Stratagy :
+=====================
+
+passport.initialize()
+- a middleware that initialize passport.
+
+
+passport.session() 
+- A web application need the ability to identify users as they browser from page to page. This series of requests and response, each associated with the same user, is known as session.
+
+
+passport.use(new LocalStrategy(User.authenticate()))
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+Note :
+======
+*authenticate() Generates a function that is used in Passport's LocalStrategy
+*serializeUser() Generates a function that is used by Passport to serialize users into the session
+*deserializeUser() Generates a function that is used by Passport to deserialize users into the session
+
+
+Demo User :
+==========
+
+app.get("/registerUser", async (req, res) => {
+    let fakeUser = new User({
+    email: "student@gmail.com",
+    username: "delta-student",
+});
+    let newUser = await User.register(fakeUser, "helloworld");
+    res.send(newUser);
+});
+
+register(user, password, cb) :
+=============================
+-Convenience method to register a new user instance with a given password. Checks if username is unique. See login example.

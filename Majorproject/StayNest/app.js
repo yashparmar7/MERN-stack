@@ -7,9 +7,13 @@ const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user");
 
-const listings = require("./routes/listing.js");
-const reviews = require("./routes/review.js");
+const listingRouter = require("./routes/listing.js");
+const reviewRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
 
 main()
   .then((res) => {
@@ -51,6 +55,15 @@ app.use(session(sessionOptions));
 //!add flash
 app.use(flash());
 
+//! Use passport as middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //! Middleware to show flash msg
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
@@ -58,11 +71,25 @@ app.use((req, res, next) => {
   next();
 });
 
+//* Demo User Create
+// app.get("/demouser", async (req, res) => {
+//   let fakeUser = new User({
+//     email: "yash123@gmail.com",
+//     username: "yash-parmar",
+//   });
+
+//   const registeredUser = await User.register(fakeUser, "helloworld");
+//   res.send(registeredUser);
+// });
+
 //! Listings routes
-app.use("/listings", listings);
+app.use("/listings", listingRouter);
 
 //! Review Route
-app.use("/listings/:id/reviews", reviews);
+app.use("/listings/:id/reviews", reviewRouter);
+
+//! user Route
+app.use("/", userRouter);
 
 // ! Error for not valid incoming request
 // app.all("*", (req, res, next) => {
