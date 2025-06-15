@@ -89,3 +89,25 @@ app.get("/registerUser", async (req, res) => {
 register(user, password, cb) :
 =============================
 -Convenience method to register a new user instance with a given password. Checks if username is unique. See login example.
+
+
+
+Connecting login route :
+
+-How to check if user is logged in ?
+
+req.isAuthenticated() // passport method
+
+
+Logout :
+========
+
+req.logout(callback) :
+
+
+Login after Signup :
+====================
+- passport's login method automatically establishes a login session.
+- we can invoke login to automatically login user.
+
+req.login(user, callback) :
