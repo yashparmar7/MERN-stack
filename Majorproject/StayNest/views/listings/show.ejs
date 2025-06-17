@@ -34,7 +34,7 @@
 
         <!-- Review page  -->
         <div class="col-8 offset-3">
-            <hr>
+            <% if(currentUser) { %>
             <h4>Leave a Review </h4>
             <form action="/listings/<%= listing.id %>/reviews"
                 method="post"
@@ -66,6 +66,7 @@
                 <button type="submit" class="btn btn-dark">Submit
                     Review</button>
             </form>
+            <% } %>
 
             <hr />
             <h4><b>All Reviews</b></h4>
@@ -73,7 +74,8 @@
                 <% for(review of listing.reviews){ %>
                 <div class="card col-5 mb-3 ms-3 p-2">
                     <div class="card-body">
-                        <h5 class="card-title"><u>Yash Parmar</u></h5>
+                        <h5 class="card-title"><u><%= review.author.username
+                                %></u></h5>
                         <p class="card-text"><%= review.comment %></p>
                         <p class="card-text"><%= review.rating %>
                             <i class="fa-solid fa-star"></i>
