@@ -35,3 +35,42 @@ Rating Style :
 Use Starability Library :
     -----------
 Link :  https://lunarlogic.github.io/starability/
+
+
+
+
+Image Uploaded :
+===============
+
+
+Manupulate Form :
+================
+
+enctype= "multipart/form-data"
+
+
+Using Multer library :
+----------------------
+Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
+
+NOTE: Multer will not process any form which is not multipart (multipart/form-data).
+
+
+Cloud Setup : (thirdparty services)
+============
+
+Cloudinary  : platform
+
+.env file : to store are environment variables / credential
+
+dotenv :(package)
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+
+Store file :
+------------
+- Multer Store Cloudinary
+
+npm i cloudinary
+
+npm i  multer-storage-cloudinary
