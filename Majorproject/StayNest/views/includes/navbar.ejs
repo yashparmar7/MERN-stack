@@ -1,8 +1,63 @@
+<style>
+    .search-container {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .search-container:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .search-input {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .btn-search {
+        background-color: #fe424d;
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-search:hover {
+        background-color: #fff;
+        color: #fe424d;
+        border: 1px solid #fe424d;
+    }
+
+    @media (max-width: 768px) {
+        .search-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .btn-search {
+            justify-content: center;
+        }
+    }
+</style>
+
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/listings">
             <i class="fa-brands fa-staylinked"></i>
-            <span>StayNest</span>
+            <span><b>StayNest</b></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup">
@@ -10,19 +65,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link " href="/">Home</a>
-                <a class="nav-link" href="/listings">All Listings</a>
-                <a class="nav-link" href="/listings/new">Add new Listing</a>
+                <a class="nav-link" href="/listings">Explore</a>
             </div>
-            <div class="navbar-nav ms-auto  ">
+
+            <!-- Centered Search -->
+            <div class="ms-auto my-2 my-md-0" style="width: 40%;">
+                <form class="search-container" role="search" action="/search"
+                    method="GET">
+                    <input class="search-input" type="search" name="q"
+                        placeholder="Search destinations" aria-label="Search">
+                    <button class="btn-search" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Search
+                    </button>
+                </form>
+            </div>
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/listings/new">Airbnb your home</a>
                 <% if(!currentUser) { %>
-                <a class="nav-link " href="/signup">Signup</a>
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/signup"><b>Sign up</b></a>
+                <a class="nav-link" href="/login"><b>Log in</b></a>
                 <% }%>
                 <% if(currentUser) { %>
-                <a class="nav-link" href="/logout">Logout</a>
+                <a class="nav-link" href="/logout"><b>Log out</b></a>
                 <% } %>
-
             </div>
         </div>
     </div>

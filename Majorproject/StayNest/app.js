@@ -39,9 +39,9 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.send("I am root ");
-});
+// app.get("/", (req, res) => {
+//   res.send("I am root ");
+// });
 
 //! add sessions
 const sessionOptions = {

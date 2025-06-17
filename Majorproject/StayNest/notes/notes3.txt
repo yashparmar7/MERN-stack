@@ -59,7 +59,7 @@ NOTE: Multer will not process any form which is not multipart (multipart/form-da
 Cloud Setup : (thirdparty services)
 ============
 
-Cloudinary  : platform
+Cloudinary  : cloud platform
 
 .env file : to store are environment variables / credential
 
@@ -74,3 +74,12 @@ Store file :
 npm i cloudinary
 
 npm i  multer-storage-cloudinary
+
+
+Map functionality added :
+=========================
+
+Use MapBox :
+
+link : https://www.mapbox.com/
+
