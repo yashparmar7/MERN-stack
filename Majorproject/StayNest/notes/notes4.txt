@@ -1,0 +1,30 @@
+How to host website ?
+
+Mongo Atlas :
+============
+- cloud database services '
+
+Database.Deploy a multi-cloud database.
+
+
+
+mongo atlas database :
+username : yashparmar
+password : yashparmar2774
+
+database cloud link :   
+mongodb+srv://yashparmar:<db_password>@cluster0.efychri.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+
+MONGO Session Store :
+======================
+- connect-mongo (npm package)
+
+
+
+Deployment :
+
+1) Render :
+2) netlify :
+3) cyclic etc.

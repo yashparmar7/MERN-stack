@@ -10,6 +10,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -18,6 +19,7 @@ const User = require("./models/user");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const { url } = require("inspector");
 
 main()
   .then((res) => {
@@ -28,6 +30,7 @@ main()
   });
 
 async function main() {
+  // const dbUrl = process.env.ATLASDB_URL;
   const URL = "mongodb://127.0.0.1:27017/staynest";
   await mongoose.connect(URL);
 }
@@ -43,6 +46,18 @@ app.use(express.static(path.join(__dirname, "public")));
 //   res.send("I am root ");
 // });
 
+const store = MongoStore.create({
+  mongoUrl: URL,
+  crypto: {
+    secret: "staynestsecretcode",
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", () => {
+  console.log("ERROR in store session", err);
+});
+
 //! add sessions
 const sessionOptions = {
   secret: "secretcode",
@@ -54,6 +69,7 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
+
 app.use(session(sessionOptions));
 
 //!add flash
