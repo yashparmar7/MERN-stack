@@ -11,15 +11,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ exteneded: true }));
 app.use(methodOverride("_method"));
 
+async function main() {
+  await mongoose.connect("mongodb://127.0.0.1:27017/chatsapp");
+}
+
 main()
   .then(() => {
     console.log("Connected to MongoDB");
   })
   .catch((err) => console.log(err));
-
-async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/chatsapp");
-}
 
 let port = 3000;
 
