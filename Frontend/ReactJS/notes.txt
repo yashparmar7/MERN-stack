@@ -43,7 +43,7 @@ Set Up Local Environment :
 
 Create-React-App     v/s   Vite
 
-npm create vite@letest
+npm create vite@latest
 
 npm run dev //to start server
 
@@ -116,3 +116,59 @@ export default function TodoList() {
   );
 }
 
+
+
+React Props :
+=============
+- Props are the information that you pass to a JSX tag.
+
+<Product title="phone" price="30k" />
+<Product title="laptop" price={40000}/>
+
+
+export default function Product({ title, price }) {
+return (
+<div className="Product">
+<h4>{title}</h4>
+<p>{price}</p>
+)}
+
+
+Passing Array to props:
+=======================
+
+features = {["fast","reliable"]}
+
+features = {{ a:"fast",b:"reliable"}}
+
+<Product Title="Laptop" Price={30000} feature={option} />
+
+
+Renderig Array :
+================
+- we will use map method to render all array list item in browser.
+
+      <p>
+        Feature :{" "}
+        {feature.map((feature) => (
+          <li>{feature}</li>
+        ))}
+      </p>
+
+
+Conditionals :
+==============
+- Adding elements on the  basis os some condition.
+
+
+      {Price > 10000 ? <p>"Discount of 5%" </p> : null}
+
+      {Price > 10000 && <p>Discount of 5%</p> }
+
+
+Dynamic Component Styling :
+===========================
+
+  let style = { backgroundColor: isDiscount && "yellow" };
+
+   <div className="product" style={style}> </div>

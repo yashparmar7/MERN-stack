@@ -1,11 +1,20 @@
 import React from "react";
 import "./Product.css";
 
-const Product = () => {
+const Product = ({ Title, Price = 10000 }) => {
+  let isDiscount = Price > 10000;
+  let style = { backgroundColor: isDiscount && "yellow" };
   return (
-    <div className="product">
-      <h1>Hello I am Title</h1>
-      <p>Hello I am Description</p>
+    <div className="product" style={style}>
+      <h1>{Title}</h1>
+      <p>Price : {Price}</p>
+      {/* <p>
+        Feature :{" "}
+        {feature.map((feature) => (
+          <li>{feature}</li>
+        ))}
+      </p> */}
+      {isDiscount && <p>Discount of 5%</p>}
     </div>
   );
 };
