@@ -172,3 +172,193 @@ Dynamic Component Styling :
   let style = { backgroundColor: isDiscount && "yellow" };
 
    <div className="product" style={style}> </div>
+
+
+Event in React :
+===============
+- Handling Click Events 
+
+function doSomething() {
+console.log("button was clicked");
+}
+
+export default function Button() {
+return (
+<div>
+<button onClick={doSomething}>Click me!</button>
+</div>
+);
+}
+
+
+
+
+- Handling Non-Click Events 
+
+function handleHover() {
+console.log("Hover");
+}
+
+export default function Button() {
+return (
+<div>
+<button onMouseOver={handleHover}>Hover me!</button>
+</div>
+);
+}
+
+
+Event Object:
+=============
+- We can access the Event Object in Handler
+
+function handle FormSubmit(event) {
+event.preventDefault();
+console.log("form was submitted");
+}
+
+export default function Form() {
+return (
+<form onSubmit={handleFormSubmit}>
+| <button>Submit</button>
+</form>
+);
+}
+
+
+
+State in React :
+===============
+- The state is a built-in react object that is used to contain data or information about the component.
+- A component's state can change over time ; whenever it changes, the component re-renders.
+
+
+
+Hooks :
+========
+- Hooks are a new addition in react 16.8
+- They let you use state and other React features without writing class.
+
+
+
+useState() :
+===========
+- useState is a React Hook that lets you add a state variable to your component.
+
+const [state, setState] = useState(initialState);
+
+
+- useState returns an array with exactly two values:
+
+1. The current state. During the first render, it will match the initialState you have passed.
+2. The set function that lets you update the state to a different value and trigger a re render.
+
+
+
+Closure :
+=========
+- A closure is a feature in JavaScript where an inner function has access to the other (enclosing) function's variables.
+
+* in Js, once a function completes its execution , any variable that were defined inside the function scope cease to exist.
+
+
+function outer(){
+
+  var b = 10;
+
+  function inner(){
+    var a= 20;
+    console.log(a+b);
+  }
+  return inner;
+}
+
+
+
+Re-render : (How it works?)
+===========================
+
+What is Re-rendering?
+=====================
+Re-rendering means React is gonna re-run your component’s function to update the UI when the state or props change.
+
+
+When Does a Component Re-render?
+
+State changes (useState) :
+==========================
+If you update a state variable with setState, the component re-renders.
+const [count, setCount] = useState(0);
+// re-render happens here 👇
+setCount(1);
+
+
+Props change :
+=============
+If a parent component gives new props to a child → boom, re-render.
+
+<Child name="Yash" /> // if "name" changes → child re-renders
+
+
+Example :
+=========
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{count}</h1> {/* ← will re-render on count change */}
+      <button onClick={() => setCount(count + 1)}>Click Me</button>
+    </div>
+  );
+}
+
+
+
+
+Callback in Updater Function (Set State) :
+==========================================
+
+setCount(count + 1);
+- It might break if multiple setCount calls run quickly — because state updates are async & batched.
+
+setCount((prevCount) => prevCount + 1);
+- Here, prevCount is guaranteed to be the latest value, even if multiple state updates happen at once.
+
+Example :
+=========
+
+const Counter = () => {
+  let [count, setCount] = useState(0); // initializes
+
+  function incCount() {
+
+    setCount((currVal) => {              // use callback in setCount 
+      return currVal + 1;
+    });
+    setCount((currVal) => {
+      return currVal + 1;
+    });
+  }
+  return (
+    <div>
+      <h1>Count : {count}</h1>
+      <button onClick={incCount}>Inc Count</button>
+    </div>
+  );
+};
+
+
+
+Note :
+
+setCount(count + 1)        -	Simple updates, not back-to-back
+setCount(prev => prev + 1) -  When next value depends on old one (safe & recommended)
+
+
+
+Note for State :
+================
+- If a state value changes, the component re-renders.
+= If the state value is same as before, React skips the re-render. 
