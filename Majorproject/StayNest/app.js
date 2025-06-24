@@ -21,19 +21,31 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const { url } = require("inspector");
 
+// Declare URL first
+const URL = "mongodb://127.0.0.1:27017/staynest";
+
+// Then call main()
 main()
-  .then((res) => {
+  .then(() => {
     console.log("database connected");
   })
   .catch((err) => {
     console.log(err);
   });
 
+// Use URL in mongoose
 async function main() {
-  // const dbUrl = process.env.ATLASDB_URL;
-  const URL = "mongodb://127.0.0.1:27017/staynest";
   await mongoose.connect(URL);
 }
+
+// Use URL in MongoStore (now it's accessible here too)
+const store = MongoStore.create({
+  mongoUrl: URL,
+  crypto: {
+    secret: "staynestsecretcode",
+  },
+  touchAfter: 24 * 3600,
+});
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -46,13 +58,13 @@ app.use(express.static(path.join(__dirname, "public")));
 //   res.send("I am root ");
 // });
 
-const store = MongoStore.create({
-  mongoUrl: URL,
-  crypto: {
-    secret: "staynestsecretcode",
-  },
-  touchAfter: 24 * 3600,
-});
+// const store = MongoStore.create({
+//   mongoUrl: URL,
+//   crypto: {
+//     secret: "staynestsecretcode",
+//   },
+//   touchAfter: 24 * 3600,
+// });
 
 store.on("error", () => {
   console.log("ERROR in store session", err);

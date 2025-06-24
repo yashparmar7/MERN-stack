@@ -362,3 +362,62 @@ Note for State :
 ================
 - If a state value changes, the component re-renders.
 = If the state value is same as before, React skips the re-render. 
+
+
+
+Object & State :
+===============
+
+Using an object as state (like in your Ludo game):
+-------------------------------------------------
+const [moves, setMoves] = useState({
+  blue: 0,
+  yellow: 0,
+  red: 0,
+  green: 0,
+});
+
+
+Now you can access values like:
+--------------------------------
+moves.blue  // 0
+
+
+And update it safely using:
+---------------------------
+setMoves((prevMoves) => ({
+  ...prevMoves,
+  blue: prevMoves.blue + 1,
+}));
+
+Note :
+=====
+(...)  use spread operator
+
+
+🚫 Don’t Do This:
+------------------
+moves.blue += 1;
+setMoves(moves); // ❌ Mutates original object, breaks React's state tracking
+
+
+✅ Always:
+-----------
+setMoves((prev) => ({
+  ...prev,
+  blue: prev.blue + 1,
+}));
+
+
+Array & State :
+===============
+
+
+
+Functions as Props :
+====================
+
+- JS function are 1st class object
+- they means they can be passed to be function as argument, returned from it & assigned to a variable.
+
+
