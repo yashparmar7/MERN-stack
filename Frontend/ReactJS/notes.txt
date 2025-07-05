@@ -337,9 +337,6 @@ const Counter = () => {
     setCount((currVal) => {              // use callback in setCount 
       return currVal + 1;
     });
-    setCount((currVal) => {
-      return currVal + 1;
-    });
   }
   return (
     <div>
@@ -413,11 +410,64 @@ Array & State :
 ===============
 
 
+** Main Concepts In React: ** 
+
+Component :
+Props :
+State :
+Event :
+
+
+
+Component Type :
+
+1) Logical Component (Smart / Stateful Component) :
+
+ Also known as: Container Component
+Manages state and logic
+Handles data fetching, user input, and side effects
+Passes data down via props
+Focus is on behavior, not UI
+
+Example Use Cases:
+API calls
+Form validation
+Routing logic
+
+Ex :
+
+function SmartComponent() {
+  const [count, setCount] = useState(0);
+
+  return <PresentationalComponent count={count} onClick={() => setCount(count + 1)} />;
+}
+
+2) Presentational Component (Dumb / UI Component)
+Also known as: Stateless Functional Component
+Receives data via props only
+Focus is on UI (HTML/CSS/visuals)
+No internal state or side effects
+Reusable and easy to test
+
+Example Use Cases:
+Buttons, Cards, Modals, etc.
+
+Ex :
+
+function PresentationalComponent({ count, onClick }) {
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={onClick}>Increment</button>
+    </div>
+  );
+}
+
+
 
 Functions as Props :
 ====================
 
 - JS function are 1st class object
-- they means they can be passed to be function as argument, returned from it & assigned to a variable.
-
+- this  means they can be passed to be function as argument, returned from it & assigned to a variable.
 
