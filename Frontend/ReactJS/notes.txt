@@ -471,3 +471,246 @@ Functions as Props :
 - JS function are 1st class object
 - this  means they can be passed to be function as argument, returned from it & assigned to a variable.
 
+
+Forms in React :
+================
+- The standard way with forms is to use Controlled Component. So we make React state to be the "single source of trith".
+
+
+- In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with setState().
+We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+
+- react old docs
+
+
+Form Lable in React :
+======================
+
+<label htmlFor="username">Full Name :</label>
+
+htmlFor :
+---------
+
+
+Handling Multiple inputs :
+==========================
+- we have create a common handleInputChange() for all elements.
+
+
+- event.target.name    change field
+
+- event.target.value   new value of the field
+
+
+example :
+
+
+[
+
+import React, { useState } from "react";
+
+const CommentsForm = () => {
+  let [formData, setFormData] = useState({
+    username: "",
+    remark: "",
+    rating: "5",
+  });
+
+  let handleInputData = (event) => {
+    setFormData((currData) => {
+      return { ...currData, [event.target.name]: event.target.value };
+    });
+  };
+
+  let handleSubmit = (event) => {
+    console.log(formData);
+    event.preventDefault();
+    setFormData({
+      username: "",
+      remark: "",
+      rating: "5",
+    });
+  };
+  return (
+    <div>
+      <h4>Comments Form</h4>
+      <form action="" onSubmit={handleSubmit}>
+        <label htmlFor="username">Username :</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="enter name"
+          value={formData.username}
+          onChange={handleInputData}
+        />
+        <br />
+        <br />
+        <label htmlFor="remark">Remarks :</label>
+        <textarea
+          name="remark"
+          id="remark"
+          placeholder="enter remarks"
+          value={formData.remark}
+          onChange={handleInputData}
+        >
+          {" "}
+        </textarea>
+        <br />
+        <br />
+        <label htmlFor="ratings">Rating :</label>
+        <input
+          type="number"
+          name="rating"
+          id="ratings"
+          max={5}
+          value={formData.rating}
+          onChange={handleInputData}
+        />
+        <br />
+        <br />
+
+        <button>Add Comments</button>
+      </form>
+    </div>
+  );
+};
+
+export default CommentsForm;
+
+
+]
+
+
+Show comments :
+
+
+[
+
+
+import React, { useState } from "react";
+import CommentsForm from "./CommentsForm";
+
+const Comment = () => {
+  let [comment, setComment] = useState([
+    {
+      username: "yash",
+      remark: "hello",
+      rating: "5",
+    },
+  ]);
+
+  let addNewComment = (comment) => {
+    setComment((currComment) => [...currComment, comment]);
+  };
+  return (
+    <div>
+      <h4>Show Comments</h4>
+
+      {comment.map((comment, idx) => (
+        <div className="comments" key={idx}>
+          <span>username : {comment.username}</span> <br />
+          <span>remark : {comment.remark}</span>
+          <br />
+          <span>rating : {comment.rating}</span>
+        </div>
+      ))}
+
+      <hr />
+      <hr />
+
+      <CommentsForm addNewComment={addNewComment} />
+    </div>
+  );
+};
+
+export default Comment;
+
+
+]
+
+
+
+Validation :
+============
+
+1) Default Validation
+2) User Define Validation
+
+Formik : ( validation tool [package])
+=====================================
+- use for forms validation 
+
+- npm i formik
+
+
+
+
+
+useEffect(func, dependencis) :
+=============
+- The Effect Hook lets you perform side effects in function components
+- Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
+
+ex :
+
+import { useState, useEffect } from "react";
+
+export default function Counter() {
+  let [count, setCount] = useState(0);
+
+  const incCount = () => {
+    setCount((currCount) => currCount + 1);
+  };
+
+  useEffect(() => {
+    console.log("This is the side effect");
+  }, [count]); // Run when count changes
+
+  return (
+    <div>
+      <h1>Count = {count}</h1>
+      <button onClick={incCount}>+1</button>
+    </div>
+  );
+}
+
+
+dependencis :
+
+useEffect(
+  function sideEffect() {
+  console.log("this is the side effect");
+},
+  [countx]
+);
+
+
+Note :
+ - If [] : dependencis are empty than it will only trigger on render not re-render.
+
+
+
+UseCases :
+==========
+= API Calls ( Async Operation )
+
+usage :
+-Connecting to an external system
+-Wrapping Effects in custom Hooks
+-Controlling a non-React widget
+-Fetching data with Effects
+-Specifying reactive dependencies
+-Updating state based on previous state from an Effect
+-Removing unnecessary object dependencies
+-Removing unnecessary function dependencies
+-Reading the latest props and state from an Effect
+-Displaying different content on the server and the client
+
+
+
+Material UI :
+=============
+- Laibrary of React UI components
+
+  
