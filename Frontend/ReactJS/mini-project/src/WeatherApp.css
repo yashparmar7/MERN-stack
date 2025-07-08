@@ -1,0 +1,123 @@
+/* WeatherApp.css */
+
+/* ===== Base Page Styling ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #93bce5, #a9b6c3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.weather-app-container {
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ===== App Title ===== */
+.app-title {
+    font-size: 2.2rem;
+    color: #0d47a1;
+    margin-bottom: 30px;
+}
+
+/* ===== SearchBox Styling ===== */
+.SearchBox {
+    background: linear-gradient(to right, #03a9f4, #00c6ff);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.SearchBox form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#search {
+    background-color: white;
+    border-radius: 5px;
+    width: 250px;
+}
+
+/* Overriding MUI button */
+.MuiButton-contained {
+    background-color: #0d47a1;
+    padding: 8px 24px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.MuiButton-contained:hover {
+    background-color: #08306b;
+}
+
+/* ===== InfoBox Styling ===== */
+.InfoBox {
+    background: linear-gradient(to bottom right, #03a9f4, #00c6ff);
+    border-radius: 18px;
+    padding: 30px 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    color: white;
+    text-align: center;
+}
+
+/* Temperature Display */
+.InfoBox h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Condition */
+.InfoBox .condition {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Weather Icon */
+.InfoBox img {
+    width: 80px;
+    height: 80px;
+    margin: 10px 0;
+}
+
+/* Detail Lines */
+.weather-detail {
+    margin: 6px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .weather-app-container {
+        padding: 20px;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .SearchBox {
+        padding: 16px;
+    }
+
+    .InfoBox {
+        padding: 25px 15px;
+    }
+}
