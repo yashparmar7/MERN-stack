@@ -1,0 +1,87 @@
+Note :Redux are not react part it is complatly independent tools we can use with react.
+
+Redux :
+=========
+- State management library for JS App.
+- Redux is built for larger,more complex application.
+- Redux Toolkit is the official recommedation of writing redux code.
+- Redux are use for State Management. 
+
+
+📌 What is Redux?
+Redux is a state management library for JavaScript applications, commonly used with React.
+It provides a centralized store for managing the global state of an application in a predictable and consistent way. 
+
+
+🏢 Central Store:
+The central store is a single JavaScript object that holds the entire state tree of your application.
+
+It is the "single source of truth", meaning every component gets its data from this one place.
+
+💡 Definition:
+A central store in Redux is a globally accessible object where the state of the entire application resides. All components can read from this store and dispatch actions to modify it, ensuring consistent and centralized state management.
+
+
+📦 Core Concepts of Redux:
+===========================
+Understanding Terms :
+
+Store: A centralized store holds the whole state tree of your application..
+
+Reducers: Functions that take the current state and an action as arguments, and return a new state result. In other words, 
+        (state, action) => newState.
+
+Action: It is a plain JavaScript object that has a type field. (like events)
+
+Slice: Collection of Redux reducer logic and actions for a single together in a single file.
+
+Dispatch: A method used to send actions to the reducer to update the store.
+
+Subscribe: 	Allows components to listen for changes in the state.
+
+
+
+
+Basic SetUp :
+
+  Store <----
+    |       | 
+    |       |
+    v       |
+  Action    |
+    |       |
+    |       |
+    v       |
+  Reducer--->
+
+
+
+
+Todo App :
+==========
+
+Designing the Store :
+---------------------
+
+todo -> id, task, is Done
+
+
+Actions :
+------------
+
+- Add a Todo, Mark as Done, Delete a Todo 
+
+{
+type: "ADD_TODO",
+payload: "write code",
+}
+
+
+Creating a reducer :
+---------------------
+
+Redux Toolkit automatically generates action creators (fnxs that create action objects)
+
+(state, action) => { // update state }
+
+*Redux Toolkit lets you write simpler immutable update logic using "mutating" syntax.

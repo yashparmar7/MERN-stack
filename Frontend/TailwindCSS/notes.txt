@@ -372,3 +372,83 @@ place-items-start, place-items-center, place-items-end, place-items-stretch
 
 ✅ place-self
 place-self-auto, place-self-start, place-self-center, place-self-end, place-self-stretch
+
+
+
+🌐 Tailwind CSS – Responsive Breakpoints :
+=========================================== 
+
+Tailwind uses mobile-first breakpoints – styles are applied from the smallest screen up.
+
+📏 Default Breakpoints
+Prefix	Min Width	Usage Example
+sm:	640px	sm:text-lg
+md:	768px	md:grid-cols-2
+lg:	1024px	lg:justify-center
+xl:	1280px	xl:p-10
+2xl:	1536px	2xl:text-3xl
+
+🛠️ Usage Syntax
+
+<h1 class="text-base md:text-lg lg:text-2xl">Responsive Text</h1>
+The text size increases at md and again at lg.
+
+🎯 Custom Breakpoints
+You can define custom breakpoints in tailwind.config.js:
+
+export default {
+  theme: {
+    extend: {
+      screens: {
+        'xs': '480px',
+        '3xl': '1600px',
+      }
+    }
+  }
+}
+
+
+
+Apply Directive :
+================
+
+- Use @apply to inline any existing utility classes into your own custom css.
+
+
+
+🛠️ Syntax:
+
+.btn {
+  @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
+}
+This creates a reusable .btn class using Tailwind utilities.
+
+📁 Where to Use It:
+Use @apply in your custom CSS files that are processed by Tailwind/PostCSS, e.g. styles.css, global.css.
+
+💡 Best Use Cases:
+
+Buttons
+
+Cards
+
+Form fields
+
+Reusable design components
+
+⚠️ Limitations:
+Cannot apply responsive (md:), pseudo-class (hover:), or variant utilities alone. Use full utility with variant:
+
+.btn {
+  @apply text-white hover:bg-blue-700; /* ✅ allowed */
+}
+🔧 Example:
+
+/* styles.css */
+.card {
+  @apply p-6 bg-white shadow-md rounded-lg;
+}
+
+<div class="card">Hello!</div>
+
+
