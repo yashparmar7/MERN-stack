@@ -29,7 +29,7 @@
 
 //! New Operator :
 
-//todo    Create Constructor : doesn't return anything & start with capital letter
+// todo    Create Constructor : doesn't return anything & start with capital letter
 // function Person(name, age) {
 //   this.name = name;
 //   this.age = age;

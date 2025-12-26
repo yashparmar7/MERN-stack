@@ -60,10 +60,10 @@ SQL : Structured Query Language
 
 Table :  (Relation)
 ----------------
-- It is a structured collection of data organized into rows and columns, similar to a spreadsheet, used to store and manage information efficiently. 
-- Each row is called as record or tuple.
-- Each column is called as field or attribute.
-- Each field in a table has a unique name.
+    - It is a structured collection of data organized into rows and columns, similar to a spreadsheet, used to store and manage information efficiently. 
+    - Each row is called as record or tuple.
+    - Each column is called as field or attribute.
+    - Each field in a table has a unique name.
 
 
 
@@ -137,7 +137,7 @@ UPDATE table_name
 SET col_name1 = 'value1',col_name2 = 'value2'
 WHERE condition;
 
-Alter : to cjange the schema 
+Alter : to change the schema 
 =====
 
 ADD column :
@@ -196,7 +196,7 @@ PRIMARY KEY :
 - it is a column (or set of columns) in a table that uniquely indentify each row.( a unique id)
 - There is only 1 PK & it should be NOT NULL.
 
-FOREIGN KEY :
+FOREIGN KEY :   
 - A foreign key is column ( or set of column) in table that refer to the primary key in a FKs can have duplicate & null values.
 - There can be multiple FKs.
  
@@ -292,11 +292,11 @@ FROM student;
 
 GROUP BY Clause :
 -------------------
-- to group the data by one or more columns
-- to perform aggregate function on each group of rows
+    - to group the data by one or more columns
+    - to perform aggregate function on each group of rows
 
-- Group rows that have the same value into summary rows.
-- It collects data from multiple records and groups the result by one more column.
+    - Group rows that have the same value into summary rows.
+    - It collects data from multiple records and groups the result by one more column.
 
 SELECT col1, col2
 FROM table_name

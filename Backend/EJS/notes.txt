@@ -93,7 +93,7 @@ Conditional Statment in EJS :
 
 
 
-Loop in EJS :
+  Loop in EJS :
 - for : <% for (var i = 0; i < array.length; i++) {
            endfor : <% } %>
 - foreach : <% foreach (var item in array) {

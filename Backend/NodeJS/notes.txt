@@ -63,7 +63,8 @@ NPM (Node Package Manager) :
 - command line tool
 
 
-Package : A package in Node.js is a collection of files that includes a module and its metadata.
+Package : 
+-A package in Node.js is a collection of files that includes a module and its metadata.
 
 
 Installing Package :
@@ -104,5 +105,5 @@ import {sum} from "./math.js"
 
 - Loading is synchronous for 'require' but can be asychronous for 'import'  
 
-note : If you're using require but want to switch to import/export, you can add a package.json file with "type": "module" by running npm init.
+note : - If you're using require but want to switch to import/export, you can add a package.json file with "type": "module" by running npm init.
 

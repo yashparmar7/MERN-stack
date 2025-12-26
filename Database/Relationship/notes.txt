@@ -3,7 +3,7 @@
 Relation Ship : (via foreign key)
 ===============
 
-- One to One :
+  - One to One :
 - Each record in one table is linked to a single record in another table.
 example :
 One country ---> One PM

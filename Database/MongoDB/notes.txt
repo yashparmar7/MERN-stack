@@ -27,7 +27,7 @@ collection : MongoDB stores documents in collection.
 CRUD Operation in MongoDB :
 ==========================
 
-INSERT in DB :
+  INSERT in DB :
 ----------------
 - Insert operation is used to add a new document to a collection in MongoDB.
 - The insert operation can be performed using the insertOne() method of the collection object.
@@ -143,9 +143,9 @@ db.students.find({scores:{$all:[90,95]}}) // to show students with scores array 
 UPDATE in DB :
 ----------------
 
-db.collection.updateOne() // update at most a single document that match a specified filter even though multiple documents may match the specified filter.
-db.collection.updateMany() // update all documents that match a specified filter.
-db.collection.replaceOne() // replace a single document that match a specified filter with the specified replacement document
+- db.collection.updateOne() // update at most a single document that match a specified filter even though multiple documents may match the specified filter.
+- db.collection.updateMany() // update all documents that match a specified filter.
+- db.collection.replaceOne() // replace a single document that match a specified filter with the specified replacement document
 
 
 syntax:
@@ -251,11 +251,11 @@ Schema :
 define schema :
 ----------------
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    age: Number
-    });
+  const userSchema = new mongoose.Schema({
+      name: String,
+      email: String,
+      age: Number
+      });
 
 
 Schema Datatypes :

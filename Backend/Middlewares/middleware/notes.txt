@@ -73,7 +73,7 @@ Types of middleware :
 Handling Errors :
 ==================
 
-- Express default Error Handling
+- Express default Error Handling  
 
 
 Custom :
@@ -127,10 +127,10 @@ app.get("/chats/:id",async(req,res,next)=>{
 
 Using try..Catch 
 ==================
-- Wrap the code in a try block.
-- Catch the error in the catch block.
-- Use the next() function to pass the error to the error-handling middleware.
-- Use the res.status().send() method to send a response to the client.
+  - Wrap the code in a try block.
+  - Catch the error in the catch block.
+  - Use the next() function to pass the error to the error-handling middleware.
+  - Use the res.status().send() method to send a response to the client.
 
 
 Using wrapAsync function :

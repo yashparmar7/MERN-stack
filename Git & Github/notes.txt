@@ -23,11 +23,6 @@ Git Using :
 
 
 
-
-
-
-
-
 Basic commands :
 
 clone :  cloning a repository on our local machine.

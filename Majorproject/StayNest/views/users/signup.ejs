@@ -1,35 +1,70 @@
 <% layout('layouts/boilerplate.ejs') %>
 
-<div class="row">
-    <h1 class="col-6 offset-3">Signup on StayNest</h1>
-    <div class="col-6 offset-3">
-        <form action="/signup" method="POST" class="needs-validation"
-            novalidate>
+<style>
+   
+    .signup-container {
+        background-color: #fff;
+        padding: 40px 30px;
+        margin: 60px auto;
+        width: 100%;
+        max-width: 450px;
+        border: 3px double #fe424d;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
 
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" name="username" id="username"
-                    class="form-control"
-                    required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" name="email" id="email"
-                    class="form-control"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" name="password" id="password"
-                    class="form-control"
-                    required>
-            </div>
-            <button class="btn btn-dark">
-                Signup now
-            </button>
-        </form>
-    </div>
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .form-control:focus {
+        border-color: #fe424d;
+        box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
+    }
+
+    .btn-dark {
+        background-color: #fe424d;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-dark:hover {
+        background-color: #dc2f3b;
+    }
+</style>
+
+<div class="signup-container">
+    <h2>Signup on StayNest</h2>
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" id="username"
+                class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" id="email" class="form-control"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" id="password"
+                class="form-control" required>
+        </div>
+
+        <div class="d-grid mt-3">
+            <button class="btn btn-dark" type="submit">Signup now</button>
+        </div>
+    </form>
 </div>

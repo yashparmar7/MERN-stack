@@ -1,13 +1,13 @@
 Library v/s Framework
 
 Library :
-- Library is a collection of pre-written code that can be used to perform specific tasks.
-- full control
+  - Library is a collection of pre-written code that can be used to perform specific tasks.
+  - full control
 
 
 Framework :
-- A framework is set of pre-written code that provides a structure for developing software application.
-- limited control
+  - A framework is set of pre-written code that provides a structure for developing software application.
+  - limited control
 
 
 
@@ -100,7 +100,7 @@ app.get("/", (req, res) => {
 
 // Send Post req res
 
-syntax:
+//syntax:
 app.post(path, callback)
 
 app.post("/", (req, res) => {
@@ -128,7 +128,7 @@ req.params
 
 
 
-Query String :
+Query String :  
 - It is a string of key-value pairs that are passed in the URL of the request.
 - It is used to pass data from the URL to the route handler function.
 - It is denoted by a question mark (?) in the URL.
